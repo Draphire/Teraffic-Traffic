@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct Teraffic_TrafficApp: App {
+//    var body: some Scene {
+        
+//        @StateObject var watchlist = WatchlistObservableObject()
+//        @StateObject var dailySummary = DailySummaryObservableObject()
+        
+        @StateObject var trafficCameras = TrafficCamerasObservableObject()
+        
     var body: some Scene {
         WindowGroup {
             ContentView()
+//                    .environmentObject(watchlist)
+                    .environmentObject(trafficCameras)
+                    .onAppear {
+                        trafficCameras.fetchTrafficCameras()
         }
     }
+    }
 }
+//}

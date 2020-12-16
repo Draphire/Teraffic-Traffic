@@ -13,6 +13,16 @@
 		F05A64E62577C7B900BDDCE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A64E52577C7B900BDDCE0 /* Preview Assets.xcassets */; };
 		F05A64F12577C7BA00BDDCE0 /* Teraffic_TrafficTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A64F02577C7BA00BDDCE0 /* Teraffic_TrafficTests.swift */; };
 		F05A64FC2577C7BA00BDDCE0 /* Teraffic_TrafficUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A64FB2577C7BA00BDDCE0 /* Teraffic_TrafficUITests.swift */; };
+		F05A650E2577E99700BDDCE0 /* DataMallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A650D2577E99700BDDCE0 /* DataMallAPI.swift */; };
+		F05A65162577E9C600BDDCE0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65152577E9C600BDDCE0 /* Model.swift */; };
+		F05A651F25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A651E25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift */; };
+		F05A6527257D224A00BDDCE0 /* TrafficSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A6526257D224A00BDDCE0 /* TrafficSummaryView.swift */; };
+		F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A652E2587A31200BDDCE0 /* ImageCache.swift */; };
+		F05A65372587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65362587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift */; };
+		F05A653C2587A36800BDDCE0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A653B2587A36800BDDCE0 /* ImageLoader.swift */; };
+		F05A65412587A39600BDDCE0 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65402587A39600BDDCE0 /* AsyncImage.swift */; };
+		F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */; };
+		F05A654B2587C1DE00BDDCE0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A654A2587C1DE00BDDCE0 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,16 @@
 		F05A64F72577C7BA00BDDCE0 /* Teraffic TrafficUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Teraffic TrafficUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05A64FB2577C7BA00BDDCE0 /* Teraffic_TrafficUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teraffic_TrafficUITests.swift; sourceTree = "<group>"; };
 		F05A64FD2577C7BA00BDDCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F05A650D2577E99700BDDCE0 /* DataMallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMallAPI.swift; sourceTree = "<group>"; };
+		F05A65152577E9C600BDDCE0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F05A651E25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCamerasObservableObject.swift; sourceTree = "<group>"; };
+		F05A6526257D224A00BDDCE0 /* TrafficSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSummaryView.swift; sourceTree = "<group>"; };
+		F05A652E2587A31200BDDCE0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		F05A65362587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
+		F05A653B2587A36800BDDCE0 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F05A65402587A39600BDDCE0 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListObservableObject.swift; sourceTree = "<group>"; };
+		F05A654A2587C1DE00BDDCE0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +95,9 @@
 		F05A64D22577C7B900BDDCE0 = {
 			isa = PBXGroup;
 			children = (
+				F05A652C2587A26800BDDCE0 /* Utilities */,
+				F05A651D25792B3700BDDCE0 /* ViewModels */,
+				F05A650C2577E95300BDDCE0 /* Shared */,
 				F05A64DD2577C7B900BDDCE0 /* Teraffic Traffic */,
 				F05A64EF2577C7BA00BDDCE0 /* Teraffic TrafficTests */,
 				F05A64FA2577C7BA00BDDCE0 /* Teraffic TrafficUITests */,
@@ -100,6 +123,7 @@
 				F05A64E22577C7B900BDDCE0 /* Assets.xcassets */,
 				F05A64E72577C7B900BDDCE0 /* Info.plist */,
 				F05A64E42577C7B900BDDCE0 /* Preview Content */,
+				F05A6526257D224A00BDDCE0 /* TrafficSummaryView.swift */,
 			);
 			path = "Teraffic Traffic";
 			sourceTree = "<group>";
@@ -128,6 +152,44 @@
 				F05A64FD2577C7BA00BDDCE0 /* Info.plist */,
 			);
 			path = "Teraffic TrafficUITests";
+			sourceTree = "<group>";
+		};
+		F05A650C2577E95300BDDCE0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F05A650D2577E99700BDDCE0 /* DataMallAPI.swift */,
+				F05A65152577E9C600BDDCE0 /* Model.swift */,
+				F05A654A2587C1DE00BDDCE0 /* Utils.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F05A651D25792B3700BDDCE0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F05A651E25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift */,
+				F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F05A652C2587A26800BDDCE0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F05A652D2587A2DB00BDDCE0 /* AsyncImage */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F05A652D2587A2DB00BDDCE0 /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				F05A652E2587A31200BDDCE0 /* ImageCache.swift */,
+				F05A65362587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift */,
+				F05A653B2587A36800BDDCE0 /* ImageLoader.swift */,
+				F05A65402587A39600BDDCE0 /* AsyncImage.swift */,
+			);
+			path = AsyncImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +321,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05A65412587A39600BDDCE0 /* AsyncImage.swift in Sources */,
 				F05A64E12577C7B900BDDCE0 /* ContentView.swift in Sources */,
+				F05A6527257D224A00BDDCE0 /* TrafficSummaryView.swift in Sources */,
 				F05A64DF2577C7B900BDDCE0 /* Teraffic_TrafficApp.swift in Sources */,
+				F05A650E2577E99700BDDCE0 /* DataMallAPI.swift in Sources */,
+				F05A65372587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift in Sources */,
+				F05A653C2587A36800BDDCE0 /* ImageLoader.swift in Sources */,
+				F05A65162577E9C600BDDCE0 /* Model.swift in Sources */,
+				F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */,
+				F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */,
+				F05A651F25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift in Sources */,
+				F05A654B2587C1DE00BDDCE0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
