@@ -23,6 +23,8 @@
 		F05A65412587A39600BDDCE0 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65402587A39600BDDCE0 /* AsyncImage.swift */; };
 		F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */; };
 		F05A654B2587C1DE00BDDCE0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A654A2587C1DE00BDDCE0 /* Utils.swift */; };
+		F05A6550258CA68500BDDCE0 /* FavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A654F258CA68500BDDCE0 /* FavouriteListView.swift */; };
+		F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		F05A65402587A39600BDDCE0 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListObservableObject.swift; sourceTree = "<group>"; };
 		F05A654A2587C1DE00BDDCE0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F05A654F258CA68500BDDCE0 /* FavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListView.swift; sourceTree = "<group>"; };
+		F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				F05A64E72577C7B900BDDCE0 /* Info.plist */,
 				F05A64E42577C7B900BDDCE0 /* Preview Content */,
 				F05A6526257D224A00BDDCE0 /* TrafficSummaryView.swift */,
+				F05A654F258CA68500BDDCE0 /* FavouriteListView.swift */,
+				F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */,
 			);
 			path = "Teraffic Traffic";
 			sourceTree = "<group>";
@@ -328,8 +334,10 @@
 				F05A650E2577E99700BDDCE0 /* DataMallAPI.swift in Sources */,
 				F05A65372587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift in Sources */,
 				F05A653C2587A36800BDDCE0 /* ImageLoader.swift in Sources */,
+				F05A6550258CA68500BDDCE0 /* FavouriteListView.swift in Sources */,
 				F05A65162577E9C600BDDCE0 /* Model.swift in Sources */,
 				F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */,
+				F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */,
 				F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */,
 				F05A651F25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift in Sources */,
 				F05A654B2587C1DE00BDDCE0 /* Utils.swift in Sources */,

@@ -16,10 +16,12 @@ struct Teraffic_TrafficApp: App {
         
         @StateObject var trafficCameras = TrafficCamerasObservableObject()
         
+        @StateObject var favouriteList = FavouriteListObservableObject()
+        
     var body: some Scene {
         WindowGroup {
             ContentView()
-//                    .environmentObject(watchlist)
+                    .environmentObject(favouriteList)
                     .environmentObject(trafficCameras)
                     .onAppear {
                         trafficCameras.fetchTrafficCameras()

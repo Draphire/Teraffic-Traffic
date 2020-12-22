@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TrafficSummaryView: View {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
+    @EnvironmentObject var favouritelist: FavouriteListObservableObject
     
     var body: some View {
         NavigationView{
@@ -20,13 +21,16 @@ struct TrafficSummaryView: View {
                         }
                         
                         Section(header: Text("Cameras")) {
-                            ForEach(cameras.camera) { cameraItem in
-                                AsyncImage(
-                                    url : URL(string: cameraItem.image)!,
-                                    placeholder: { Text("Loading ...")},
-                                    image: { Image(uiImage: $0).resizable()}
-                                )
-                                .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
+                            ForEach(cameras.cameras) { cameras in
+//                                AsyncImage(
+//                                    url : URL(string: cameraItem.camera.image)!,
+//                                    placeholder: { Text("Loading ...")},
+//                                    image: { Image(uiImage: $0).resizable()}
+//                                )
+//                                .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
+                                
+                                TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+                                
 //                                Text(cameraItem.image ?? "Image not available")
 //                                Text( "null")
 //                                NavigationLink(

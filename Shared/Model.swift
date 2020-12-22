@@ -19,19 +19,18 @@ struct AllTrafficCameras: Decodable {
 
 struct Items: Decodable{
     let timeStamp: String?
-    let camera: [Cameras]
+    let cameras: [Cameras]
     
     enum CodingKeys: String, CodingKey {
         case timeStamp = "timestamp"
-        case camera = "cameras"
+        case cameras = "cameras"
     }
 }
 
 struct Cameras: Decodable, Identifiable{
-    
 //struct Cameras: Codable, Identifiable, Hashable{
     let id:String
-    let timeStamp:String?
+    let timeStamp:String
     let image:String
     let imageMetaData: ImageMetaData
     let location: Location
@@ -43,6 +42,75 @@ struct Cameras: Decodable, Identifiable{
         case imageMetaData = "image_metadata"
         case location = "location"
     }
+    
+    var camera: Camera {
+        return Camera(id: id , timeStamp: timeStamp ?? "", image: image )
+//        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
+    }
+    
+}
+
+//struct ccc: Codable, Identifiable, Hashable  {
+//    let id: String
+//    let timeStamp: String
+//    let image: String
+////    let location: Location
+//
+//    enum CodingKeys: String, CodingKey {
+//        case id = "Slug"
+//        case timeStamp = "Country"
+//        case image = "ISO2"
+//    }
+//
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(id)
+//        hasher.combine(timeStamp)
+//        hasher.combine(image)
+//    }
+//
+//    var displayName: String {
+//        "\(timeStamp)"
+//    }
+//
+////    var url: URL {
+////        let string = "stats://watchlist?id=\(id)&name=\(name)&iso=\(iso)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+////        return URL(string: string)!
+////    }
+//}
+
+struct Camera: Codable, Identifiable, Hashable {
+    let id: String
+    //let name: String
+    let timeStamp: String
+    let image: String
+//    let location: Location
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "camera_id"
+        //case name = "name"
+        case timeStamp = "timestamp"
+        case image = "image"
+//        case location = "location"
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(timeStamp)
+        hasher.combine(image)
+//        hasher.combine(location)
+    }
+    
+    // Can potentially add name derivation here
+    var displayName: String {
+        "\(id)"
+    }
+    
+//    var url: URL {
+//        let string = "stats://watchlist?id=\(id)&name=\(name)&iso=\(iso)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        return URL(string: string)!
+//    }
+    
+//    var url
     
 }
 
