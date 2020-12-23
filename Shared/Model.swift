@@ -44,7 +44,7 @@ struct Cameras: Decodable, Identifiable{
     }
     
     var camera: Camera {
-        return Camera(id: id , timeStamp: timeStamp ?? "", image: image )
+        return Camera(id: id , timeStamp: timeStamp, image: image )
 //        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
     }
     

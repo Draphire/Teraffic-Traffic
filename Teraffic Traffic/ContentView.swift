@@ -13,6 +13,9 @@ struct ContentView: View {
     @State var selection: String = "summary"
     
     var body: some View {
+        TabView(selection: $selection){
+            
+        
         TrafficSummaryView()
             .tabItem {
                 VStack {
@@ -21,8 +24,19 @@ struct ContentView: View {
                 }
             }
             .tag("summary")
+            
+            FavouriteListView()
+                .tabItem {
+                    VStack{
+                        Image(systemName:"star.fill")
+                        Text("Favourite List")
+                    }
+                }
+                .tag("favouritelist")
 //        Text("Hello, world!")
 //            .padding()
+    }
+        
     }
 }
 
