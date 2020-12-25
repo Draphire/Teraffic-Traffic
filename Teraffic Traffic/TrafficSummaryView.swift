@@ -22,6 +22,11 @@ struct TrafficSummaryView: View {
                         
                         Section(header: Text("Cameras")) {
                             ForEach(cameras.cameras) { cameras in
+                                
+                                NavigationLink(
+                                
+                                    destination: TrafficCameraDetailView( camera: cameras.camera),
+                                    label: {
 //                                AsyncImage(
 //                                    url : URL(string: cameraItem.camera.image)!,
 //                                    placeholder: { Text("Loading ...")},
@@ -30,6 +35,8 @@ struct TrafficSummaryView: View {
 //                                .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
                                 
                                 TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+                                
+                                    })
                                 
 //                                Text(cameraItem.image ?? "Image not available")
 //                                Text( "null")

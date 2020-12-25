@@ -17,6 +17,7 @@ enum DataMallAPIError: Error {
 
 protocol DataMallRepositoryService {
     func getAllTrafficCameras(completion: @escaping (Result<AllTrafficCameras, DataMallAPIError>) -> ())
+    func getTrafficCameras(cameraId: String, completion: @escaping (Result<Cameras, DataMallAPIError>)->())
 }
 
 class DataMallAPIService : DataMallRepositoryService{
@@ -45,6 +46,33 @@ class DataMallAPIService : DataMallRepositoryService{
         }
         
         executeDataTaskAndDecode(with: url, completion: completion)
+    }
+    
+    func getTrafficCameras(cameraId: String, completion: @escaping (Result<Cameras, DataMallAPIError>) -> ()) {
+//        guard let url = URL(string: "\(baseAPIURL)\(currentTime)") else {
+//            completion(.failure(.invalidURL))
+//            return
+//        }
+//
+//        executeDataTaskAndDecode(with: url, completion: completion)
+        
+        getAllTrafficCameras { (result) in
+            switch result {
+            case .success(let response):
+//                (response.items[0].cameras).first{cameraId == $0.id } != nil
+                if let foo = (response.items[0].cameras).first(where: {$0.id == cameraId}) {
+                   // do something with foo
+                    completion(.success(foo))
+                }
+//                else {
+//                   // item could not be found
+//                }
+//                completion(.success(response.global))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
     }
 
     private func executeDataTaskAndDecode<D: Decodable>(with url: URL, completion: @escaping (Result<D, DataMallAPIError>) -> ()) {
