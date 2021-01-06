@@ -27,6 +27,7 @@
 		F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */; };
 		F05A65622593166000BDDCE0 /* TrafficCameraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65612593166000BDDCE0 /* TrafficCameraDetailView.swift */; };
 		F05A6567259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A6566259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift */; };
+		F05A656D25998BF700BDDCE0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A656C25998BF700BDDCE0 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraRowView.swift; sourceTree = "<group>"; };
 		F05A65612593166000BDDCE0 /* TrafficCameraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraDetailView.swift; sourceTree = "<group>"; };
 		F05A6566259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraDetailObservableObject.swift; sourceTree = "<group>"; };
+		F05A656C25998BF700BDDCE0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		F05A652C2587A26800BDDCE0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F05A656B25998BC900BDDCE0 /* Map */,
 				F05A652D2587A2DB00BDDCE0 /* AsyncImage */,
 			);
 			path = Utilities;
@@ -202,6 +205,14 @@
 				F05A65402587A39600BDDCE0 /* AsyncImage.swift */,
 			);
 			path = AsyncImage;
+			sourceTree = "<group>";
+		};
+		F05A656B25998BC900BDDCE0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F05A656C25998BF700BDDCE0 /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				F05A653C2587A36800BDDCE0 /* ImageLoader.swift in Sources */,
 				F05A6550258CA68500BDDCE0 /* FavouriteListView.swift in Sources */,
 				F05A65162577E9C600BDDCE0 /* Model.swift in Sources */,
+				F05A656D25998BF700BDDCE0 /* MapView.swift in Sources */,
 				F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */,
 				F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */,
 				F05A6567259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift in Sources */,
