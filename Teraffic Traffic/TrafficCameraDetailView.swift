@@ -47,6 +47,10 @@ struct TrafficCameraDetailView: View {
 //                        MapView
                         MapView(cameraItems:[cameraSelected]).frame(height: 200)
 //                        Map(coordinateRegion: $region).frame(height: 200)
+//                        ForEach([cameraSelected]){
+//
+//                        }
+                        MapViewRepresentable(cameraItems:[cameraSelected]).frame(height: 200)
                     
                 AsyncImage(
                     url : URL(string: cameraSelected.image)!,
