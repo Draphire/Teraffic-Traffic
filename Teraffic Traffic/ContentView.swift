@@ -24,7 +24,14 @@ struct ContentView: View {
                 }
             }
             .tag("summary")
-            
+            TrafficMapView()
+                .tabItem{
+                    VStack{
+                        Image(systemName:"star.fill")
+                        Text("Favourite List")
+                    }
+                    
+                } .tag("trafficmap")
             FavouriteListView()
                 .tabItem {
                     VStack{
@@ -33,6 +40,8 @@ struct ContentView: View {
                     }
                 }
                 .tag("favouritelist")
+            
+          
 //        Text("Hello, world!")
 //            .padding()
     }

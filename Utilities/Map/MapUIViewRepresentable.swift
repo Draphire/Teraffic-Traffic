@@ -12,7 +12,9 @@ import MapKit
 struct MapViewRepresentable: UIViewRepresentable {
     let locationManager = CLLocationManager()
     let cameraItems: [Cameras]
-//    var cameraAnnotations: [MKAnnotation]
+    
+    // 1.
+//    var annotationOnTap: (_ title: String) -> Void
     
     private func cameraAnnotated(with cameras: Cameras) -> MKAnnotation {
         
@@ -20,11 +22,23 @@ struct MapViewRepresentable: UIViewRepresentable {
         location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
         
         return location
-//        cameraAnnotations.append(MKAnnotation())
-//        guard let favouriteList = trafficCameras.trafficCameras?.items[0].cameras else {
-//            return nil
-//        }
-//        return favouriteList.first { camera.id == $0.id}
+        
+    }
+    
+    private func cameraAnnotated(with cameras: [Cameras]) -> [MKAnnotation] {
+        var cameraAnnotations: [MKAnnotation] = []
+        
+        for cameras in cameras {
+            
+            let location = MKPointAnnotation()
+        location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
+            
+            cameraAnnotations.append(location)
+            
+        }
+        
+        return cameraAnnotations
+
     }
     
     func makeUIView(context: Context) -> MKMapView {
@@ -33,25 +47,11 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.showsUserLocation = true
-//        let region = MKCoordinateRegion(center: currentLocation, latitudinalMeters: 800, longitudinalMeters: 800)
-        
-//        ForEach(cameraItems){
-//            cameraItems in
+
+        let cameraAnnotationItem = cameraAnnotated(with: cameraItems)
+
+        view.addAnnotations(cameraAnnotationItem)
             
-//            if let
-        let cameraAnnotationItem = cameraAnnotated(with: cameraItems[0])
-//                cameraAnnotations.append(cameraAnnotationItem)
-            view.addAnnotation(cameraAnnotationItem)
-            
-            
-//            if let cameras = camerasFavourited(with: camerasInList){
-//                TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouriteList.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
-//            } else {
-//                Text(camerasInList.id)
-//            }
-            
-//        }
-//        view.addAnnotations([MKAnnotation])
         let status = CLLocationManager.authorizationStatus()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
@@ -65,5 +65,32 @@ struct MapViewRepresentable: UIViewRepresentable {
             view.setRegion(region, animated: true)
         }
     }
+    
+//    final class MapCoordinator: NSObject, MKMapViewDelegate {
+//        // 1.
+//        var parent: MapView
+//
+//        init(_ parent: MapView) {
+//            self.parent = parent
+//        }
+//
+//        deinit {
+//            print("deinit: MapCoordinator")
+//        }
+//        // 2.
+//        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//            view.canShowCallout = true
+//
+//            let btn = UIButton(type: .detailDisclosure)
+//            view.rightCalloutAccessoryView = btn
+//        }
+//
+//        // 3.
+//        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//            guard let capital = view.annotation as? Checkpoint, let placeName = capital.title else { return }
+//            parent.annotationOnTap(placeName)
+//        }
+//
+//    }
     
 }
