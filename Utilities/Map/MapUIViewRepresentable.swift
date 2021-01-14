@@ -14,7 +14,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     let cameraItems: [Cameras]
     
     // 1.
-//    var annotationOnTap: (_ title: String) -> Void
+    var annotationOnTap: (_ title: String) -> Void
     
     private func cameraAnnotated(with cameras: Cameras) -> MKAnnotation {
         
@@ -42,7 +42,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+        let mapView = MKMapView(frame: .zero)
+        
+        mapView.delegate = context.coordinator
+        return mapView
     }
     
     func updateUIView(_ view: MKMapView, context: Context) {
@@ -66,31 +69,38 @@ struct MapViewRepresentable: UIViewRepresentable {
         }
     }
     
-//    final class MapCoordinator: NSObject, MKMapViewDelegate {
-//        // 1.
-//        var parent: MapView
-//
-//        init(_ parent: MapView) {
-//            self.parent = parent
-//        }
-//
-//        deinit {
-//            print("deinit: MapCoordinator")
-//        }
-//        // 2.
-//        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//            view.canShowCallout = true
-//
-//            let btn = UIButton(type: .detailDisclosure)
-//            view.rightCalloutAccessoryView = btn
-//        }
-//
-//        // 3.
-//        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-//            guard let capital = view.annotation as? Checkpoint, let placeName = capital.title else { return }
-//            parent.annotationOnTap(placeName)
-//        }
-//
-//    }
+    func makeCoordinator() -> MapCoordinator {
+           MapCoordinator(self)
+       }
     
+
+    
+}
+
+final class MapCoordinator: NSObject, MKMapViewDelegate {
+    // 1.
+    var parent: MapViewRepresentable
+
+    init(_ parent: MapViewRepresentable) {
+        self.parent = parent
+    }
+
+    deinit {
+        print("deinit: MapCoordinator")
+    }
+    // 2.
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.canShowCallout = true
+
+        let btn = UIButton(type: .detailDisclosure)
+        view.rightCalloutAccessoryView = btn
+    }
+
+    // 3.
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let capital = view.annotation as? Checkpoint, let placeName = capital.title else {
+            return }
+        parent.annotationOnTap(placeName)
+    }
+
 }

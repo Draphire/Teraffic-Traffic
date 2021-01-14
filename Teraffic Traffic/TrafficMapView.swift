@@ -17,7 +17,9 @@ struct TrafficMapView: View {
             ZStack{
                 if let cameras =
                     trafficCameras.trafficCameras?.items[0] {
-                    MapViewRepresentable(cameraItems:cameras.cameras).frame(height: 200)
+                    MapViewRepresentable(cameraItems:cameras.cameras,annotationOnTap: { title in
+                        print("Title clicked", title)
+                    }).frame(height: 200)
                     
                 }else {
                     ProgressView()

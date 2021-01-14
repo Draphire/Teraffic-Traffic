@@ -50,7 +50,9 @@ struct TrafficCameraDetailView: View {
 //                        ForEach([cameraSelected]){
 //
 //                        }
-                        MapViewRepresentable(cameraItems:[cameraSelected]).frame(height: 200)
+                        MapViewRepresentable(cameraItems:[cameraSelected], annotationOnTap: { title in
+                            print("Title clicked", title)
+                        }).frame(height: 200)
                     
                 AsyncImage(
                     url : URL(string: cameraSelected.image)!,
