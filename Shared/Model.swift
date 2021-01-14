@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct AllTrafficCameras: Decodable {
     
@@ -47,6 +48,14 @@ struct Cameras: Decodable, Identifiable{
         return Camera(id: id , timeStamp: timeStamp, image: image )
 //        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
     }
+    
+    var cameraCheckPoint: Checkpoint {
+        return Checkpoint(title: id, coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude ))
+//        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
+    }
+    
+//    var cameraCheckPoint =  Checkpoint(title: id,
+//    coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
     
 }
 
@@ -133,6 +142,18 @@ struct Location: Decodable {
     enum CodingKeys: String, CodingKey {
         case latitude = "latitude"
         case longitude = "longitude"
+    }
+}
+
+class Checkpoint: NSObject, MKAnnotation {
+    let title: String?
+//    let countryCode: String?
+    let coordinate: CLLocationCoordinate2D
+
+    init(title: String?,  coordinate: CLLocationCoordinate2D) {
+        self.title = title
+//        self.countryCode = countryCode
+        self.coordinate = coordinate
     }
 }
 

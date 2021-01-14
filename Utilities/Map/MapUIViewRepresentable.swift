@@ -18,10 +18,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     private func cameraAnnotated(with cameras: Cameras) -> MKAnnotation {
         
-            let location = MKPointAnnotation()
-        location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
+//            let location = MKPointAnnotation()
+//        location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
         
-        return location
+        return cameras.cameraCheckPoint
         
     }
     
@@ -30,10 +30,10 @@ struct MapViewRepresentable: UIViewRepresentable {
         
         for cameras in cameras {
             
-            let location = MKPointAnnotation()
-        location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
+//            let location = MKPointAnnotation()
+//        location.coordinate = CLLocationCoordinate2D(latitude: cameras.location.latitude, longitude: cameras.location.longitude)
             
-            cameraAnnotations.append(location)
+            cameraAnnotations.append(cameras.cameraCheckPoint)
             
         }
         
