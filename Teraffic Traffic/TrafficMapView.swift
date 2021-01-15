@@ -19,7 +19,9 @@ struct TrafficMapView: View {
                     trafficCameras.trafficCameras?.items[0] {
                     MapViewRepresentable(cameraItems:cameras.cameras,annotationOnTap: { title in
                         print("Title clicked", title)
-                    }).frame(height: 200)
+//                        TrafficCameraDetailView( camera: title.camera)
+                    })
+//                    .frame(height: 200)
                     
                 }else {
                     ProgressView()

@@ -45,14 +45,14 @@ struct TrafficCameraDetailView: View {
                             .font(.headline)
                         
 //                        MapView
-                        MapView(cameraItems:[cameraSelected]).frame(height: 200)
+//                        MapView(cameraItems:[cameraSelected]).frame(height: 200)
 //                        Map(coordinateRegion: $region).frame(height: 200)
 //                        ForEach([cameraSelected]){
 //
 //                        }
                         MapViewRepresentable(cameraItems:[cameraSelected], annotationOnTap: { title in
                             print("Title clicked", title)
-                        }).frame(height: 200)
+                        }).frame(height: 300)
                     
                 AsyncImage(
                     url : URL(string: cameraSelected.image)!,

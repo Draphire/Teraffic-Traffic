@@ -91,9 +91,52 @@ final class MapCoordinator: NSObject, MKMapViewDelegate {
     // 2.
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         view.canShowCallout = true
-
+//        view.image =
+        
+    
+        
         let btn = UIButton(type: .detailDisclosure)
         view.rightCalloutAccessoryView = btn
+        
+        guard let capital = view.annotation as? Checkpoint, let cameraImage = capital.image else {
+            return }
+        
+//        let cameraImageView = AsyncImage(
+//            url : URL(string: cameraImage)!,
+//            placeholder: { Text("Loading ...")},
+//            image: { Image(uiImage: $0).resizable()}
+//        )
+        
+        //show Image on callout Accessory
+
+//                    let url = NSURL(string: cameraImage)
+        
+        let data = NSData(contentsOf: URL(string: cameraImage)!)
+        
+        let size = CGSize(width: 150.0, height: 150.0)
+        
+        let calloutImage = UIImage(data:data! as Data)?.scaledToFit(toSize: size)
+        
+//        view.detailCalloutAccessoryView = UIImageView(image: calloutImage)
+        let imageView = UIImageView(image: calloutImage)
+//        imageView.center = CGPoint(x: 10, y: 10)
+        
+//        view.leftCalloutAccessoryView = imageView
+        view.detailCalloutAccessoryView = imageView
+        
+//        let loader = ImageLoader(url:  URL(string: cameraImage)!, cache: Environment(\.imageCache).wrappedValue)
+//
+//        if loader.image != nil {
+//            view.image = loader.image
+//
+//
+//            view.rightCalloutAccessoryView = UIImageView(image: loader.image)
+//        }
+        
+//        view.detailCalloutAccessoryView =UIImageView(image: loader.image)
+        
+//        view.image = rightCalloutAccessoryView(cameraImageView) .rightCalloutAccessoryView = cameraImageView
+      
     }
 
     // 3.
@@ -102,5 +145,48 @@ final class MapCoordinator: NSObject, MKMapViewDelegate {
             return }
         parent.annotationOnTap(placeName)
     }
+    
 
+}
+
+extension UIImage {
+
+    func scaledToFit(toSize newSize: CGSize) -> UIImage {
+        if (size.width < newSize.width && size.height < newSize.height) {
+            return copy() as! UIImage
+        }
+
+        let widthScale = newSize.width / size.width
+        let heightScale = newSize.height / size.height
+
+        let scaleFactor = widthScale < heightScale ? widthScale : heightScale
+        let scaledSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
+
+        return self.scaled(toSize: scaledSize, in: CGRect(x: 0.0, y: 0.0, width: scaledSize.width, height: scaledSize.height))
+    }
+
+    func scaled(toSize newSize: CGSize, in rect: CGRect) -> UIImage {
+        if UIScreen.main.scale == 2.0 {
+            UIGraphicsBeginImageContextWithOptions(newSize, !hasAlphaChannel, 2.0)
+        }
+        else {
+            UIGraphicsBeginImageContext(newSize)
+        }
+
+        draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage ?? UIImage()
+    }
+
+    var hasAlphaChannel: Bool {
+        guard let alpha = cgImage?.alphaInfo else {
+            return false
+        }
+        return alpha == CGImageAlphaInfo.first ||
+            alpha == CGImageAlphaInfo.last ||
+            alpha == CGImageAlphaInfo.premultipliedFirst ||
+            alpha == CGImageAlphaInfo.premultipliedLast
+    }
 }
