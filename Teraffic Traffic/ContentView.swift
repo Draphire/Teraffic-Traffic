@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var selectedCamera: Cameras?
+    @State var selectedAnnotation: Camera?
     @State var selection: String = "summary"
     
     var body: some View {

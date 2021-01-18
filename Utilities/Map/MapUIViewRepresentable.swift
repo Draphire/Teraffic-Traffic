@@ -14,7 +14,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     let cameraItems: [Cameras]
     
     // 1.
-    var annotationOnTap: (_ title: String) -> Void
+    var annotationOnTap: (_ cameras: Cameras) -> Void
     
     private func cameraAnnotated(with cameras: Cameras) -> MKAnnotation {
         
@@ -141,9 +141,10 @@ final class MapCoordinator: NSObject, MKMapViewDelegate {
 
     // 3.
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let capital = view.annotation as? Checkpoint, let placeName = capital.title else {
+        guard let capital = view.annotation as? Checkpoint
+              , let placeName = capital.title else {
             return }
-        parent.annotationOnTap(placeName)
+        parent.annotationOnTap(capital.cameras)
     }
     
 

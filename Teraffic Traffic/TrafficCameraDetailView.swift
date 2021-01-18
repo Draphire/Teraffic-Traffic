@@ -51,7 +51,7 @@ struct TrafficCameraDetailView: View {
 //
 //                        }
                         MapViewRepresentable(cameraItems:[cameraSelected], annotationOnTap: { title in
-                            print("Title clicked", title)
+                            print("Title clicked", title.camera.id)
                         }).frame(height: 300)
                     
                 AsyncImage(

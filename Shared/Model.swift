@@ -50,7 +50,7 @@ struct Cameras: Decodable, Identifiable{
     }
     
     var cameraCheckPoint: Checkpoint {
-        return Checkpoint(title: id, image:image,coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude ))
+        return Checkpoint(title: id, image:image,coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude ), cameras: self)
 //        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
     }
     
@@ -150,10 +150,12 @@ class Checkpoint: NSObject, MKAnnotation {
 //    let countryCode: String?
     let image: String?
     let coordinate: CLLocationCoordinate2D
+    let cameras: Cameras
 
-    init(title: String?, image: String?, coordinate: CLLocationCoordinate2D) {
+    init(title: String?, image: String?, coordinate: CLLocationCoordinate2D, cameras: Cameras) {
         self.title = title
         self.image = image
+        self.cameras = cameras
 //        self.countryCode = countryCode
         self.coordinate = coordinate
     }
