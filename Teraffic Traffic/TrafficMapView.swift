@@ -30,11 +30,20 @@ struct TrafficMapView: View {
                         
                     })
 //                    .background(
-//                        NavigationLink( "MapSource", destination:
-//                                                    TrafficCameraDetailView( camera: selectedAnnotation!), isActive:$isActive){
+//
+//                        NavigationLink( destination:
+//                                                    TrafficCameraDetailView(
+//                                                        selectedAnnotation: $selectedAnnotation, camera: cameras), isActive:$isActive){
 //
 //                        EmptyView()
 //                    })
+                    .background(
+                        NavigationLink(destination:
+                                        TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: cameras.cameras[0].camera), isActive: $isActive){
+                        Text("Page  Link")
+                    }
+            //
+                )
 //                    .frame(height: 200)
                     
                 }else {

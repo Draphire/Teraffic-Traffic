@@ -46,14 +46,19 @@ struct ContentView: View {
 //        Text("Hello, world!")
 //            .padding()
     }
-        .sheet(item: $selectedAnnotation, onDismiss: {
-        selectedAnnotation = nil
-    }, content: { (camera) in
-        NavigationView {
-            TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: camera)
-        }
-
-    })
+//        .sheet(item: $selectedAnnotation, onDismiss: {
+//        selectedAnnotation = nil
+//    }, content: { (camera) in
+//        NavigationView {
+//            TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: camera)
+//        }
+//        .background(
+//            NavigationLink(destination:
+//                                    TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: selectedAnnotation!), isActive: $isActive){
+//            Text("Page  Link")
+//        }
+//
+//    )
         
     }
 }
