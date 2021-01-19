@@ -12,8 +12,8 @@ struct TrafficMapView: View {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist:
         FavouriteListObservableObject
-    @State var isActive = false
-    @State var selectedAnnotation: Camera?
+    @Binding var isActive : Bool
+    @Binding var selectedAnnotation: Camera?
     
     var body: some View {
         NavigationView{
