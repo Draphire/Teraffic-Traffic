@@ -13,6 +13,8 @@ struct TrafficCameraDetailView: View {
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
     @StateObject var trafficDetail = TrafficCameraDetailObservableObject()
     
+    @Binding var selectedAnnotation: Camera?
+    
     let camera: Camera
 //    let cameras: Cameras
     @State var region = MKCoordinateRegion(
@@ -60,15 +62,46 @@ struct TrafficCameraDetailView: View {
                     image: { Image(uiImage: $0).resizable()}
                 )
                         
+                    }
+                }// end of list
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarItems(
+                    trailing:
+                        Button(action: {
+                            favouritelist.toggle(camera: camera)
+                        }, label: {
+                             Image(systemName: favouritelist.isAddedToFavouritelist(camera: camera) ? "star.fill" : "star")
+                        })
+                )
+                
+            }
+        }.navigationTitle(camera.id).navigationBarItems(leading: Button(action: {
+            print("Dismissing sheet view...")
+            self.selectedAnnotation = nil
+        }) {
+            Text("Done").bold()
+        })
+        .navigationBarItems(
+            trailing:
+                HStack{
+                Button(action: {
+                    favouritelist.toggle(camera: camera)
+                }, label: {
+                     Image(systemName: favouritelist.isAddedToFavouritelist(camera: camera) ? "star.fill" : "star")
+                })
+                    if((self.selectedAnnotation) != nil){
                         
-                        
-                        
+                    Button(action: {
+                        print("Dismissing sheet view...")
+                        self.selectedAnnotation = nil
+                    }) {
+                        Text("Done").bold()
+                    }
                         
                     }
                 }
-                
-            }
-        }.navigationTitle(camera.id)
+            
+        )
         .onAppear {
             trafficDetail.fetchCamera(cameraId: camera.id)
         }

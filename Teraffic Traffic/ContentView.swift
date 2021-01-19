@@ -18,7 +18,7 @@ struct ContentView: View {
         TabView(selection: $selection){
             
         
-        TrafficSummaryView()
+            TrafficSummaryView(selectedAnnotation: $selectedAnnotation)
             .tabItem {
                 VStack {
                     Image(systemName: "chart.bar")
@@ -50,7 +50,7 @@ struct ContentView: View {
         selectedAnnotation = nil
     }, content: { (camera) in
         NavigationView {
-            TrafficCameraDetailView(camera: camera)
+            TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: camera)
         }
 
     })

@@ -11,6 +11,7 @@ struct TrafficSummaryView: View {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
     
+    @Binding var selectedAnnotation: Camera?
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,7 +26,7 @@ struct TrafficSummaryView: View {
                                 
                                 NavigationLink(
                                 
-                                    destination: TrafficCameraDetailView( camera: cameras.camera),
+                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
                                     label: {
 //                                AsyncImage(
 //                                    url : URL(string: cameraItem.camera.image)!,
