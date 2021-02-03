@@ -50,7 +50,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.showsUserLocation = true
-
+//        view.showsTraffic = true
+        
+        view.mapType = MKMapType.hybrid
+        
         let cameraAnnotationItem = cameraAnnotated(with: cameraItems)
 
         view.addAnnotations(cameraAnnotationItem)

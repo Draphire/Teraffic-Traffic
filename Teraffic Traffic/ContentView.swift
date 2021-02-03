@@ -33,6 +33,13 @@ struct ContentView: View {
                         Text("Favourite List")
                     }
                 }.tag("trafficmap")
+            TrafficGoogleMapView()
+                .tabItem{
+                    VStack{
+                        Image(systemName:"star.fill")
+                        Text("Google List")
+                    }
+                }.tag("trafficgooglemap")
             FavouriteListView()
                 .tabItem {
                     VStack{

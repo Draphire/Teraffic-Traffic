@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		686A37A5AE4A326985180346 /* libPods-Teraffic Traffic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C14CB5EA0E29863AB572B /* libPods-Teraffic Traffic.a */; };
 		F05A64DF2577C7B900BDDCE0 /* Teraffic_TrafficApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A64DE2577C7B900BDDCE0 /* Teraffic_TrafficApp.swift */; };
 		F05A64E12577C7B900BDDCE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A64E02577C7B900BDDCE0 /* ContentView.swift */; };
 		F05A64E32577C7B900BDDCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A64E22577C7B900BDDCE0 /* Assets.xcassets */; };
@@ -28,8 +29,15 @@
 		F05A65622593166000BDDCE0 /* TrafficCameraDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A65612593166000BDDCE0 /* TrafficCameraDetailView.swift */; };
 		F05A6567259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A6566259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift */; };
 		F05A656D25998BF700BDDCE0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A656C25998BF700BDDCE0 /* MapView.swift */; };
+		F05A677825C30AD500FC6CDA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A677725C30AD500FC6CDA /* LocationManager.swift */; };
+		F05A678125C3106200FC6CDA /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A678025C3106200FC6CDA /* PlaceManager.swift */; };
+		F05A678925C7055300FC6CDA /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A678825C7055300FC6CDA /* PlacesList.swift */; };
+		F05A678E25C707AD00FC6CDA /* PlacesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A678D25C707AD00FC6CDA /* PlacesRow.swift */; };
+		F05A679525C9AB9700FC6CDA /* TrafficGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A679425C9AB9700FC6CDA /* TrafficGoogleMapView.swift */; };
 		F06222A225A5FF58004974E9 /* MapUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06222A125A5FF58004974E9 /* MapUIViewRepresentable.swift */; };
 		F06222A725A77AB2004974E9 /* TrafficMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06222A625A77AB2004974E9 /* TrafficMapView.swift */; };
+		F0B5443C25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */; };
+		F0B5444125B8663800F677E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5444025B8663800F677E8 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4691BB8235F962E3F363A1 /* Pods-Teraffic Traffic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teraffic Traffic.release.xcconfig"; path = "Target Support Files/Pods-Teraffic Traffic/Pods-Teraffic Traffic.release.xcconfig"; sourceTree = "<group>"; };
+		547C514D94FD4364445B9284 /* Pods-Teraffic Traffic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teraffic Traffic.debug.xcconfig"; path = "Target Support Files/Pods-Teraffic Traffic/Pods-Teraffic Traffic.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9C14CB5EA0E29863AB572B /* libPods-Teraffic Traffic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Teraffic Traffic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05A64DB2577C7B900BDDCE0 /* Teraffic Traffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teraffic Traffic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05A64DE2577C7B900BDDCE0 /* Teraffic_TrafficApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teraffic_TrafficApp.swift; sourceTree = "<group>"; };
 		F05A64E02577C7B900BDDCE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,8 +88,15 @@
 		F05A65612593166000BDDCE0 /* TrafficCameraDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraDetailView.swift; sourceTree = "<group>"; };
 		F05A6566259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraDetailObservableObject.swift; sourceTree = "<group>"; };
 		F05A656C25998BF700BDDCE0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F05A677725C30AD500FC6CDA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F05A678025C3106200FC6CDA /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
+		F05A678825C7055300FC6CDA /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
+		F05A678D25C707AD00FC6CDA /* PlacesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRow.swift; sourceTree = "<group>"; };
+		F05A679425C9AB9700FC6CDA /* TrafficGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficGoogleMapView.swift; sourceTree = "<group>"; };
 		F06222A125A5FF58004974E9 /* MapUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIViewRepresentable.swift; sourceTree = "<group>"; };
 		F06222A625A77AB2004974E9 /* TrafficMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficMapView.swift; sourceTree = "<group>"; };
+		F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapUIViewRepresentable.swift; sourceTree = "<group>"; };
+		F0B5444025B8663800F677E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686A37A5AE4A326985180346 /* libPods-Teraffic Traffic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		258CC8828787C5D617B7086E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				547C514D94FD4364445B9284 /* Pods-Teraffic Traffic.debug.xcconfig */,
+				3F4691BB8235F962E3F363A1 /* Pods-Teraffic Traffic.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC5D9E9C9519CC09968CFD86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C14CB5EA0E29863AB572B /* libPods-Teraffic Traffic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F05A64D22577C7B900BDDCE0 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +152,8 @@
 				F05A64EF2577C7BA00BDDCE0 /* Teraffic TrafficTests */,
 				F05A64FA2577C7BA00BDDCE0 /* Teraffic TrafficUITests */,
 				F05A64DC2577C7B900BDDCE0 /* Products */,
+				258CC8828787C5D617B7086E /* Pods */,
+				BC5D9E9C9519CC09968CFD86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +180,8 @@
 				F05A655C2592289A00BDDCE0 /* TrafficCameraRowView.swift */,
 				F05A65612593166000BDDCE0 /* TrafficCameraDetailView.swift */,
 				F06222A625A77AB2004974E9 /* TrafficMapView.swift */,
+				F0B5444025B8663800F677E8 /* AppDelegate.swift */,
+				F05A679425C9AB9700FC6CDA /* TrafficGoogleMapView.swift */,
 			);
 			path = "Teraffic Traffic";
 			sourceTree = "<group>";
@@ -195,6 +235,8 @@
 		F05A652C2587A26800BDDCE0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F05A677F25C3103A00FC6CDA /* Google */,
+				F05A677625C30AAD00FC6CDA /* Location */,
 				F05A656B25998BC900BDDCE0 /* Map */,
 				F05A652D2587A2DB00BDDCE0 /* AsyncImage */,
 			);
@@ -217,8 +259,27 @@
 			children = (
 				F05A656C25998BF700BDDCE0 /* MapView.swift */,
 				F06222A125A5FF58004974E9 /* MapUIViewRepresentable.swift */,
+				F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		F05A677625C30AAD00FC6CDA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F05A677725C30AD500FC6CDA /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		F05A677F25C3103A00FC6CDA /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				F05A678025C3106200FC6CDA /* PlaceManager.swift */,
+				F05A678825C7055300FC6CDA /* PlacesList.swift */,
+				F05A678D25C707AD00FC6CDA /* PlacesRow.swift */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +289,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F05A65002577C7BA00BDDCE0 /* Build configuration list for PBXNativeTarget "Teraffic Traffic" */;
 			buildPhases = (
+				DDEA9231904B2CADD8086AE7 /* [CP] Check Pods Manifest.lock */,
 				F05A64D72577C7B900BDDCE0 /* Sources */,
 				F05A64D82577C7B900BDDCE0 /* Frameworks */,
 				F05A64D92577C7B900BDDCE0 /* Resources */,
+				579EF7048F4749321C4002A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,28 +408,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		579EF7048F4749321C4002A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teraffic Traffic/Pods-Teraffic Traffic-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Teraffic Traffic/Pods-Teraffic Traffic-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Teraffic Traffic/Pods-Teraffic Traffic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEA9231904B2CADD8086AE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Teraffic Traffic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F05A64D72577C7B900BDDCE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05A678E25C707AD00FC6CDA /* PlacesRow.swift in Sources */,
 				F06222A225A5FF58004974E9 /* MapUIViewRepresentable.swift in Sources */,
 				F05A65412587A39600BDDCE0 /* AsyncImage.swift in Sources */,
 				F05A64E12577C7B900BDDCE0 /* ContentView.swift in Sources */,
 				F05A6527257D224A00BDDCE0 /* TrafficSummaryView.swift in Sources */,
 				F05A64DF2577C7B900BDDCE0 /* Teraffic_TrafficApp.swift in Sources */,
+				F0B5443C25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift in Sources */,
 				F05A650E2577E99700BDDCE0 /* DataMallAPI.swift in Sources */,
+				F05A678925C7055300FC6CDA /* PlacesList.swift in Sources */,
 				F05A65372587A33E00BDDCE0 /* EnvironmentValues+ImageCache.swift in Sources */,
 				F06222A725A77AB2004974E9 /* TrafficMapView.swift in Sources */,
 				F05A653C2587A36800BDDCE0 /* ImageLoader.swift in Sources */,
 				F05A6550258CA68500BDDCE0 /* FavouriteListView.swift in Sources */,
+				F05A678125C3106200FC6CDA /* PlaceManager.swift in Sources */,
+				F05A679525C9AB9700FC6CDA /* TrafficGoogleMapView.swift in Sources */,
 				F05A65162577E9C600BDDCE0 /* Model.swift in Sources */,
 				F05A656D25998BF700BDDCE0 /* MapView.swift in Sources */,
 				F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */,
+				F05A677825C30AD500FC6CDA /* LocationManager.swift in Sources */,
 				F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */,
 				F05A6567259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift in Sources */,
 				F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */,
 				F05A65622593166000BDDCE0 /* TrafficCameraDetailView.swift in Sources */,
+				F0B5444125B8663800F677E8 /* AppDelegate.swift in Sources */,
 				F05A651F25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift in Sources */,
 				F05A654B2587C1DE00BDDCE0 /* Utils.swift in Sources */,
 			);
@@ -522,6 +634,7 @@
 		};
 		F05A65012577C7BA00BDDCE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 547C514D94FD4364445B9284 /* Pods-Teraffic Traffic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -544,6 +657,7 @@
 		};
 		F05A65022577C7BA00BDDCE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F4691BB8235F962E3F363A1 /* Pods-Teraffic Traffic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

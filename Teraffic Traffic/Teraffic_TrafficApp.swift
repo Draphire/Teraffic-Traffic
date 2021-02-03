@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Teraffic_TrafficApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
 //    var body: some Scene {
         
 //        @StateObject var watchlist = WatchlistObservableObject()
