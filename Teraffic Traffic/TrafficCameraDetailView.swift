@@ -52,14 +52,14 @@ struct TrafficCameraDetailView: View {
 //                        ForEach([cameraSelected]){
 //
 //                        }
-//                        GoogleMapViewRepresentable()
-//                            .edgesIgnoringSafeArea(.top)
-//                            .frame(height: 300)
+                        GoogleMapViewRepresentable()
+                            .edgesIgnoringSafeArea(.top)
+                            .frame(height: 300)
 //                        PlacesList()
                         
-                        MapViewRepresentable(cameraItems:[cameraSelected], annotationOnTap: { title in
-                            print("Title clicked", title.camera.id)
-                        }).frame(height: 300)
+//                        MapViewRepresentable(cameraItems:[cameraSelected], annotationOnTap: { title in
+//                            print("Title clicked", title.camera.id)
+//                        }).frame(height: 300)
                     
                 AsyncImage(
                     url : URL(string: cameraSelected.image)!,
