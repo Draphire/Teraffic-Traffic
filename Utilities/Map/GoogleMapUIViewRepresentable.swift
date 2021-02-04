@@ -13,6 +13,8 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
 //    let locationManager = LocationManager()
     let locationManager = CLLocationManager()
     private let zoom: Float = 15.0
+    
+    let cameraItems: [Cameras]
 //    let cameraItems: [Cameras]
 //    private let zoom: Float = 15.0
      
@@ -56,4 +58,74 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
       
          
      }
+    
 }
+
+
+final class GMapCoordinator: NSObject, GMSMapViewDelegate {
+    // 1.
+    var parent: GoogleMapViewRepresentable
+
+    init(_ parent: GoogleMapViewRepresentable) {
+        self.parent = parent
+    }
+
+    deinit {
+        print("deinit: GMapCoordinator")
+    }
+    // 2.
+//    func mapView(_ mapView: GMSMapView, didSelect view: MKAnnotationView) {
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+    
+//        view.canShowCallout = true
+        
+    
+        
+//        let btn = UIButton(type: .detailDisclosure)
+//        view.rightCalloutAccessoryView = btn
+        
+//        guard let capital = view.annotation as? Checkpoint, let cameraImage = capital.image else {
+//            return }
+        
+        //show Image on callout Accessory
+
+//                    let url = NSURL(string: cameraImage)
+        
+//        let data = NSData(contentsOf: URL(string: cameraImage)!)
+        
+//        let size = CGSize(width: 150.0, height: 150.0)
+//
+//        let calloutImage = UIImage(data:data! as Data)?.scaledToFit(toSize: size)
+        
+        
+//        let imageView = UIImageView(image: calloutImage)
+//        view.detailCalloutAccessoryView = imageView
+        
+//        let loader = ImageLoader(url:  URL(string: cameraImage)!, cache: Environment(\.imageCache).wrappedValue)
+//
+//        if loader.image != nil {
+//            view.image = loader.image
+//
+//
+//            view.rightCalloutAccessoryView = UIImageView(image: loader.image)
+//        }
+        
+//        view.detailCalloutAccessoryView =UIImageView(image: loader.image)
+        
+//        view.image = rightCalloutAccessoryView(cameraImageView) .rightCalloutAccessoryView = cameraImageView
+      
+    }
+
+    // 3.
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        guard let capital = view.annotation as? Checkpoint
+//              , let placeName = capital.title else {
+//            return }
+//        parent.annotationOnTap(capital.cameras)
+//    }
+    
+
+}
+
+
+

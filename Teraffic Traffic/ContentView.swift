@@ -33,7 +33,7 @@ struct ContentView: View {
                         Text("Favourite List")
                     }
                 }.tag("trafficmap")
-            TrafficGoogleMapView()
+            TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
                 .tabItem{
                     VStack{
                         Image(systemName:"star.fill")

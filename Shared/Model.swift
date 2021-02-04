@@ -161,6 +161,22 @@ class Checkpoint: NSObject, MKAnnotation {
     }
 }
 
+class GoogleCheckpoint: NSObject, MKAnnotation {
+    let title: String?
+//    let countryCode: String?
+    let image: String?
+    let coordinate: CLLocationCoordinate2D
+    let cameras: Cameras
+
+    init(title: String?, image: String?, coordinate: CLLocationCoordinate2D, cameras: Cameras) {
+        self.title = title
+        self.image = image
+        self.cameras = cameras
+//        self.countryCode = countryCode
+        self.coordinate = coordinate
+    }
+}
+
 //struct CamInfo: Decodable, Identifiable{
 //    let timeStamp: String?
 //    let id: String

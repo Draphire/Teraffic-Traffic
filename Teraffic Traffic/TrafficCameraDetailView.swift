@@ -52,7 +52,7 @@ struct TrafficCameraDetailView: View {
 //                        ForEach([cameraSelected]){
 //
 //                        }
-                        GoogleMapViewRepresentable()
+                        GoogleMapViewRepresentable(cameraItems:[cameraSelected])
                             .edgesIgnoringSafeArea(.top)
                             .frame(height: 300)
 //                        PlacesList()
