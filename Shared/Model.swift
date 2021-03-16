@@ -7,7 +7,7 @@
 
 import Foundation
 import MapKit
-
+import GoogleMaps
 struct AllTrafficCameras: Decodable {
     
     let items: [Items]
@@ -53,6 +53,12 @@ struct Cameras: Decodable, Identifiable{
         return Checkpoint(title: id, image:image,coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude ), cameras: self)
 //        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
     }
+    
+    var cameraGoogleCheckPoint: GoogleCheckpoint {
+        return GoogleCheckpoint(name: id, image:image,coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude ), cameras: self)
+//        return Camera(id: <#T##String#>, timeStamp: <#T##String#>, image: <#T##String#>, location: <#T##String#>)
+    }
+    
     
 //    var cameraCheckPoint =  Checkpoint(title: id,
 //    coordinate:  CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
@@ -161,15 +167,17 @@ class Checkpoint: NSObject, MKAnnotation {
     }
 }
 
-class GoogleCheckpoint: NSObject, MKAnnotation {
-    let title: String?
+class GoogleCheckpoint: GMSMarker {
+//    let title: String?
 //    let countryCode: String?
+    let name: String?
     let image: String?
     let coordinate: CLLocationCoordinate2D
     let cameras: Cameras
 
-    init(title: String?, image: String?, coordinate: CLLocationCoordinate2D, cameras: Cameras) {
-        self.title = title
+    init(name: String?, image: String?, coordinate: CLLocationCoordinate2D, cameras: Cameras) {
+//        self.title = title
+        self.name = name
         self.image = image
         self.cameras = cameras
 //        self.countryCode = countryCode
