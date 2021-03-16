@@ -16,6 +16,10 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
     private let zoom: Float = 15.0
     
     let cameraItems: [Cameras]
+    
+    
+    // 1.
+    var annotationOnTap: (_ cameras: Cameras) -> Void
 //    let cameraItems: [Cameras]
 //    private let zoom: Float = 15.0
     
@@ -93,6 +97,7 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
 //                    newMarker.title = gCheckpoint.id
                     newMarker.title = gCheckpoint.id
                     newMarker.snippet = gCheckpoint.image
+                    newMarker.userData = gCheckpoint
                     newMarker.map = view
 //                    gCheckpoint.position = gCheckpoint.coordinate
 //                    gCheckpoint.position
@@ -166,6 +171,7 @@ final class Coordinator: NSObject, GMSMapViewDelegate, ObservableObject {
         
             print("mapView: GoogleMap didTapInfoWindowOf")
         
+        self.parent.annotationOnTap(marker.userData as! Cameras)
 //        let btn = UIButton(type: .detailDisclosure)
 //        view.rightCalloutAccessoryView = btn
         

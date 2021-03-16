@@ -27,9 +27,25 @@ struct TrafficGoogleMapView: View{
                 if let cameras =
                     trafficCameras.trafficCameras?.items[0] {
         
-        GoogleMapViewRepresentable(cameraItems:cameras.cameras)
+        GoogleMapViewRepresentable(cameraItems:cameras.cameras,
+                                   annotationOnTap: { cameras in
+            //                        NavigationLink( "MapSource", destination:
+            //                                            TrafficCameraDetailView( camera: cameras.camera), isActive:$isActive)
+                                    print("assign binding for navigation = ", cameras.id)
+                                    isActive = true
+                                    selectedAnnotation = cameras.camera
+            //                        TrafficCameraDetailView( camera: title.camera)
+                                    
+                                })
             .edgesIgnoringSafeArea(.top)
             .frame(height: 300)
+            .background(
+                NavigationLink(destination:
+                                TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: cameras.cameras[0].camera), isActive: $isActive){
+                Text("Page  Link")
+            }
+    //
+        )
 //        PlacesList()
     
                 }else {

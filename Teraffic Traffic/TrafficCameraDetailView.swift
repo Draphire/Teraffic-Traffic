@@ -52,7 +52,10 @@ struct TrafficCameraDetailView: View {
 //                        ForEach([cameraSelected]){
 //
 //                        }
-                        GoogleMapViewRepresentable(cameraItems:[cameraSelected])
+                        GoogleMapViewRepresentable(cameraItems:[cameraSelected],
+                                                   annotationOnTap: { title in
+                                                                             print("Title clicked", title.camera.id)
+                                                                           }).frame(height: 300)
                             .edgesIgnoringSafeArea(.top)
                             .frame(height: 300)
 //                        PlacesList()
