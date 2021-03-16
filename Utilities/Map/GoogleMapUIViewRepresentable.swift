@@ -14,6 +14,7 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
 //    let locationManager = LocationManager()
     let locationManager = CLLocationManager()
     private let zoom: Float = 15.0
+    private let fullZoom: Float = 12.0
     
     let cameraItems: [Cameras]
     
@@ -55,10 +56,18 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
 //         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
 //         return mapView
 //        [self.view layoutIfNeeded];
+        var mapView:GMSMapView
+        var camera: GMSCameraPosition
+        if cameraItems.count == 1 {
+            camera = GMSCameraPosition.camera(withLatitude: cameraItems[0].location.latitude, longitude: cameraItems[0].location.longitude, zoom: zoom)
+             mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        }else{
+            camera = GMSCameraPosition.camera(withLatitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude, zoom: fullZoom)
+             mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        }
+       
         
-        let camera = GMSCameraPosition.camera(withLatitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude, zoom: zoom)
-        
-             let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+//             let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
 //             let mapView = GMSMapView.map(withFrame: CGRect.zero)
         
@@ -84,9 +93,14 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
             locationManager.startUpdatingLocation()
             let location: CLLocationCoordinate2D = locationManager.location!.coordinate
             
-            view.animate(toLocation:location
-            )
             
+            if cameraItems.count == 1 {}
+            else{
+            view.animate(toLocation:location
+            
+            
+            )
+            }
 //            let cameraGCheckPointItems = cameraGCheckPoint(with: cameraItems)
             
             DispatchQueue.main.async {
