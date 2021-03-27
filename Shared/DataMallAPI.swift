@@ -22,7 +22,7 @@ protocol DataMallRepositoryService {
 
 class DataMallAPIService : DataMallRepositoryService{
     static let shared = DataMallAPIService()
-    var currentTime: String = getDate()
+//    var currentTime: String = getDate()
 //    2020-12-03T17:23:08.358Z  2020-12-04T06:21:16.231Z 2020-12-04T06:16:11.503Z
 //    2020-12-04T06:23:49.928Z
 //    2020-12-04T06:25:43.660Z
@@ -40,6 +40,7 @@ class DataMallAPIService : DataMallRepositoryService{
     private init(){}
     
     func getAllTrafficCameras(completion: @escaping (Result<AllTrafficCameras, DataMallAPIError>) -> ()) {
+        let currentTime: String = getDate()
         guard let url = URL(string: "\(baseAPIURL)\(currentTime)") else {
             completion(.failure(.invalidURL))
             return

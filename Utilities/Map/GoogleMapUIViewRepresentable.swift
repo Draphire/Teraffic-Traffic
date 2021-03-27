@@ -230,6 +230,16 @@ final class Coordinator: NSObject, GMSMapViewDelegate, ObservableObject {
     
     /* set a custom Info Window */
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        // retrieving the cameras object from the marker object in the userData
+        let markerObject = marker.userData as! Cameras
+//        var body: some UIView{
+//
+//                Text("Done").bold()
+//
+//                Text("Done").bold()
+//
+//                Text("Done").bold()
+//        }
         let view = UIView(frame: CGRect.init(x: 0, y: 0, width: 200, height: 70))
         view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 6
@@ -239,23 +249,31 @@ final class Coordinator: NSObject, GMSMapViewDelegate, ObservableObject {
         view.addSubview(lbl1)
         
         let lbl2 = UILabel(frame: CGRect.init(x: lbl1.frame.origin.x, y: lbl1.frame.origin.y + lbl1.frame.size.height + 3, width: view.frame.size.width - 16, height: 15))
-        lbl2.text = "I am a custom info window."
+        lbl2.text = markerObject.timeStamp
         lbl2.font = UIFont.systemFont(ofSize: 14, weight: .light)
         view.addSubview(lbl2)
         
-        let data = NSData(contentsOf: URL(string: marker.snippet!)!)
+        let data = NSData(contentsOf: URL(string: markerObject.image)!)
         
-        let size = CGSize(width: 40.0, height: 40.0)
+        let size = CGSize(width: 100.0, height: 100.0)
         
-        let calloutImage = UIImage(data:data! as Data)?.scaledToFit(toSize: size)
+        let calloutImage = UIImage(data:data! as Data)
+//        ?
+//            .scaledToFit(toSize: size)
         
 //        view.detailCalloutAccessoryView = UIImageView(image: calloutImage)
         let imageView = UIImageView(image: calloutImage)
+        
+        let viewContainer = UIView(frame: CGRect.init(x: 0, y: 100, width: 200, height: 700))
+        viewContainer.addSubview(imageView)
+       
 //        imageView.center = CGPoint(x: 10, y: 10)
         
 //        view.leftCalloutAccessoryView = imageView
-        //view.detailCalloutAccessoryView = imageView
-        view.addSubview(imageView)
+//        view.detailCalloutAccessoryView = imageView
+        
+        view.addSubview(viewContainer)
+//        view.addSubview(body)
 
         return view
     }

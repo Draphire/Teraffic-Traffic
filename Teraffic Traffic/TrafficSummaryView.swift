@@ -9,7 +9,10 @@ import SwiftUI
 
 struct TrafficSummaryView: View {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
+//    @ObservedObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
+    
+    @State private var searchQuery: String = ""
     
     @Binding var selectedAnnotation: Camera?
     var body: some View {
@@ -21,8 +24,8 @@ struct TrafficSummaryView: View {
 //                            Text(cameras.camera.description.description)
                         }
                         
-                        Section(header: Text("Cameras")) {
-                            ForEach(cameras.cameras) { cameras in
+                        Section(header: SearchBar(text: self.$searchQuery)) {
+                            ForEach(cameras.cameras.filter{self.searchQuery.isEmpty ? true: $0.id.contains(searchQuery)},id: \.self) { cameras in
                                 
                                 NavigationLink(
                                 

@@ -19,10 +19,19 @@ struct ContentView: View {
             
         
             TrafficSummaryView(selectedAnnotation: $selectedAnnotation)
+//            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
             .tabItem {
                 VStack {
                     Image(systemName: "chart.bar")
                     Text("Summary")
+                }
+            }
+           
+            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
+            .tabItem {
+                VStack {
+                    Image(systemName: "chart.bar")
+                    Text("Summary2")
                 }
             }
             .tag("summary")
@@ -30,17 +39,17 @@ struct ContentView: View {
                 .tabItem{
                     VStack{
                         Image(systemName:"star.fill")
-                        Text("Favourite List")
+                        Text("Apple Map")
                     }
                 }.tag("trafficmap")
             TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
                 .tabItem{
                     VStack{
                         Image(systemName:"star.fill")
-                        Text("Google List")
+                        Text("Google Map")
                     }
                 }.tag("trafficgooglemap")
-            FavouriteListView()
+            FavouriteListView( selectedAnnotation: $selectedAnnotation)
                 .tabItem {
                     VStack{
                         Image(systemName:"star.fill")

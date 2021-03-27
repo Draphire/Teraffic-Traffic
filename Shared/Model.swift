@@ -28,8 +28,20 @@ struct Items: Decodable{
     }
 }
 
-struct Cameras: Decodable, Identifiable{
+struct Cameras: Decodable, Identifiable, Hashable{
+    static func == (lhs: Cameras, rhs: Cameras) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 //struct Cameras: Codable, Identifiable, Hashable{
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(timeStamp)
+        hasher.combine(image)
+//        hasher.combine(location)
+    }
+    
     let id:String
     let timeStamp:String
     let image:String

@@ -37,8 +37,8 @@ struct TrafficGoogleMapView: View{
             //                        TrafficCameraDetailView( camera: title.camera)
                                     
                                 })
-            .edgesIgnoringSafeArea(.top)
-            .frame(height: 300)
+//            .edgesIgnoringSafeArea(.top)
+//            .frame(height: 300)
             .background(
                 NavigationLink(destination:
                                 TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: cameras.cameras[0].camera), isActive: $isActive){

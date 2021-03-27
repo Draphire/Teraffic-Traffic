@@ -13,6 +13,8 @@ struct FavouriteListView : View{
     @EnvironmentObject var trafficCameras : TrafficCamerasObservableObject
     @State var selectedCamera: Camera?
     
+    @Binding var selectedAnnotation: Camera?
+    
     private func camerasFavourited(with camera: Camera) -> Cameras? {
         guard let favouriteList = trafficCameras.trafficCameras?.items[0].cameras else {
             return nil
@@ -27,12 +29,19 @@ struct FavouriteListView : View{
                     camerasInList in
 //                    AsyncImage(
 //                        url : URL(string: cameras.image)!,
-//                        placeholder: { Text("Loading ...")},
+//                        placeholder: { Text("Loading ...")},	
 //                        image: { Image(uiImage: $0).resizable()}
 //                    )
 //                    .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
                     if let cameras = camerasFavourited(with: camerasInList){
-                        TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouriteList.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+                        
+                        NavigationLink( destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
+                                        
+                                        label:{
+                                            TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouriteList.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+                                        })
+                        
+                        
                     } else {
                         Text(camerasInList.id)
                     }
@@ -59,8 +68,8 @@ struct FavouriteListView : View{
     }
 }
 
-struct FavouritelistView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavouriteListView()
-    }
-}
+//struct FavouritelistView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        FavouriteListView()
+//    }
+//}
