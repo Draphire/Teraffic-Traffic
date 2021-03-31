@@ -11,29 +11,42 @@ struct ContentView: View {
     
     @State var selectedCamera: Cameras?
     @State var selectedAnnotation: Camera?
-    @State var selection: String = "summary"
+    @State var selection: String = "Summary"
     @State var isActive = false
     
     var body: some View {
         TabView(selection: $selection){
             
         
-            TrafficSummaryView(selectedAnnotation: $selectedAnnotation)
-//            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
-            .tabItem {
-                VStack {
-                    Image(systemName: "chart.bar")
-                    Text("Summary")
-                }
-            }
-           
-            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
+//            TrafficSummaryView(selectedAnnotation: $selectedAnnotation)
+////            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
+//            .tabItem {
+//                VStack {
+//                    Image(systemName: "chart.bar")
+//                    Text("Summary")
+//                }
+//            }
+            TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
+                .tabItem{
+                    VStack{
+                        Image(systemName:"star.fill")
+                        Text("Google Map")
+                    }
+                }.tag("trafficgooglemap")
+            ScrollUIView(selectedAnnotation: $selectedAnnotation)
             .tabItem {
                 VStack {
                     Image(systemName: "chart.bar")
                     Text("Summary2")
                 }
             }
+//            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
+//            .tabItem {
+//                VStack {
+//                    Image(systemName: "chart.bar")
+//                    Text("Summary2")
+//                }
+//            }
             .tag("summary")
             TrafficMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
                 .tabItem{
@@ -42,13 +55,13 @@ struct ContentView: View {
                         Text("Apple Map")
                     }
                 }.tag("trafficmap")
-            TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
-                .tabItem{
-                    VStack{
-                        Image(systemName:"star.fill")
-                        Text("Google Map")
-                    }
-                }.tag("trafficgooglemap")
+//            TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
+//                .tabItem{
+//                    VStack{
+//                        Image(systemName:"star.fill")
+//                        Text("Google Map")
+//                    }
+//                }.tag("trafficgooglemap")
             FavouriteListView( selectedAnnotation: $selectedAnnotation)
                 .tabItem {
                     VStack{

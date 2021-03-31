@@ -9,6 +9,20 @@ import Foundation
 import SwiftUI
 import UIKit
 
+
+struct ScrollUIView: View {
+    
+    @Binding var selectedAnnotation: Camera?
+    
+    var body: some View {
+        
+            NavigationView{
+        ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
+            }.navigationTitle("Daily Traffic")
+    }
+    
+}
+
 struct ScrollUIViewRepresentable: UIViewRepresentable {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
@@ -28,14 +42,28 @@ struct ScrollUIViewRepresentable: UIViewRepresentable {
             control.refreshControl?.addTarget(context.coordinator, action:
                 #selector(Coordinator.handleRefreshControl),
                                               for: .valueChanged)
-    let childView = UIHostingController(rootView: TrafficSummaryView(selectedAnnotation: $selectedAnnotation))
-        childView.view.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
-            
+    let childView = UIHostingController(rootView: TrafficListView(selectedAnnotation: $selectedAnnotation))
+        childView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
             control.addSubview(childView.view)
             return control
         }
     
-    func updateUIView(_ uiView: UIScrollView, context: Context) {}
+    func updateUIView(_ uiView: UIScrollView, context: Context) {
+//        let childView = UIHostingController(rootView: TrafficSummaryView(selectedAnnotation: $selectedAnnotation))
+//            childView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                
+//        uiView.addSubview(childView.view)
+        //UINavigationController(rootViewController: UIHostingController(rootView: MyView()))
+        
+//        let childView = UINavigationController(rootViewController: UIHostingController( rootView: TrafficListView(selectedAnnotation: $selectedAnnotation)))
+        
+//        let childView = UIHostingController(rootView: TrafficListView(selectedAnnotation: $selectedAnnotation))
+//            childView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//
+//        uiView.addSubview(childView.view)
+        print("update scrollView")
+    }
     
     
     class Coordinator: NSObject {
