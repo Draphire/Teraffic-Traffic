@@ -41,6 +41,7 @@
 		F0B5443C25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */; };
 		F0B5444125B8663800F677E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5444025B8663800F677E8 /* AppDelegate.swift */; };
 		F0BBDF4D261229210008D432 /* TrafficListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF4C261229210008D432 /* TrafficListView.swift */; };
+		F0BBDF552615BF390008D432 /* TrafficCameraSelectedObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF542615BF390008D432 /* TrafficCameraSelectedObservableObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapUIViewRepresentable.swift; sourceTree = "<group>"; };
 		F0B5444025B8663800F677E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0BBDF4C261229210008D432 /* TrafficListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficListView.swift; sourceTree = "<group>"; };
+		F0BBDF542615BF390008D432 /* TrafficCameraSelectedObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraSelectedObservableObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				F05A651E25792B6C00BDDCE0 /* TrafficCamerasObservableObject.swift */,
 				F05A65452587BE6700BDDCE0 /* FavouriteListObservableObject.swift */,
 				F05A6566259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift */,
+				F0BBDF542615BF390008D432 /* TrafficCameraSelectedObservableObject.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				F05A652F2587A31200BDDCE0 /* ImageCache.swift in Sources */,
 				F05A677825C30AD500FC6CDA /* LocationManager.swift in Sources */,
 				F05A655D2592289A00BDDCE0 /* TrafficCameraRowView.swift in Sources */,
+				F0BBDF552615BF390008D432 /* TrafficCameraSelectedObservableObject.swift in Sources */,
 				F05A679F2608E80600FC6CDA /* SearchBar.swift in Sources */,
 				F05A6567259317D800BDDCE0 /* TrafficCameraDetailObservableObject.swift in Sources */,
 				F05A65462587BE6700BDDCE0 /* FavouriteListObservableObject.swift in Sources */,

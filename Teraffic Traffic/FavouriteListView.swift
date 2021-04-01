@@ -35,7 +35,9 @@ struct FavouriteListView : View{
 //                    .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
                     if let cameras = camerasFavourited(with: camerasInList){
                         
-                        NavigationLink( destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
+                        NavigationLink( destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation
+//                                                                              , camera: cameras.camera
+                        ),
                                         
                                         label:{
                                             TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouriteList.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)

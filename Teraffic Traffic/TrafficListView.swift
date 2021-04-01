@@ -15,9 +15,14 @@ struct TrafficListView: View {
     @State private var searchQuery: String = ""
     
     @Binding var selectedAnnotation: Camera?
+    
+@Binding var isActive : Bool
+    
+    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
+    
     var body: some View {
-        NavigationView{
-            VStack{
+//        NavigationView{
+//            VStack{
                 if let cameras = trafficCameras.trafficCameras?.items[0] {
                     List{
                         Section(header: Text("Singapore Traffic Cameras")){
@@ -27,21 +32,23 @@ struct TrafficListView: View {
                         Section(header: SearchBar(text: self.$searchQuery)) {
                             ForEach(cameras.cameras.filter{self.searchQuery.isEmpty ? true: $0.id.contains(searchQuery)},id: \.self) { cameras in
                                 
-                                NavigationLink(
-                                
-                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
-                                    label: {
-//                                AsyncImage(
-//                                    url : URL(string: cameraItem.camera.image)!,
-//                                    placeholder: { Text("Loading ...")},
-//                                    image: { Image(uiImage: $0).resizable()}
+                                Button(action: {
+                                    self.isActive.toggle()
+                                    self.selectedAnnotation = cameras.camera
+                                    self.cameraSelected.selectCamera(camera: cameras.camera)
+                                }){
+                                    TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+                                }
+//                                NavigationLink(
+//
+//                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
+//                                    label: {
+//
+//                                TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
+//
+//                                    }
 //                                )
-//                                .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
-                                
-                                TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
-                                
-                                    })
-                                
+//
 //                                Text(cameraItem.image ?? "Image not available")
 //                                Text( "null")
 //                                NavigationLink(
@@ -60,10 +67,10 @@ struct TrafficListView: View {
                     ProgressView()
                 }
                 
-            }
+//            }
 //            .navigationViewStyle(StackNavigationViewStyle())
-            .navigationTitle("Daily Summary")
-        }.navigationViewStyle(StackNavigationViewStyle())
+//            .navigationTitle("Daily Summary")
+//        }.navigationViewStyle(StackNavigationViewStyle())
 //        .navigationTitle("Daily Summary")
     }
     

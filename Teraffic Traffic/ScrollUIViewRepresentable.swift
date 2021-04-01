@@ -9,17 +9,44 @@ import Foundation
 import SwiftUI
 import UIKit
 
-
+// SwiftUI View Wrapper for UIKit ScrollView
 struct ScrollUIView: View {
     
     @Binding var selectedAnnotation: Camera?
+
+    @State var isActive = false
+    
+    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
+    
+    
+    
+//    var annotationOnTap: (_ cameras: Cameras) -> Void
     
     var body: some View {
         
+//        if cameraSelected.cameraSelected {
+//            TrafficCameraDetailView(selectedAnnotation: self.$cameraSelected.camera)
+//        }else{
+        
             NavigationView{
-        ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
-            }.navigationTitle("Daily Traffic")
+                ZStack{
+                ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation, isActive:$isActive).environmentObject(cameraSelected)     .background(
+                    NavigationLink(destination:
+                                    TrafficCameraDetailView(selectedAnnotation: self.$cameraSelected.camera),
+    //                               isActive: $isActive
+                                   isActive: self.$cameraSelected.cameraSelected
+                    ){
+                    Text("Page  Link")
+                }
+                
+        //
+            )
+            }
+                .navigationTitle("Daily Traffic")
+            }
+       
     }
+//    }
     
 }
 
@@ -27,8 +54,12 @@ struct ScrollUIViewRepresentable: UIViewRepresentable {
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
     
+    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
+    
 //    @State var selectedAnnotation: Camera?
     @Binding var selectedAnnotation: Camera?
+    
+@Binding var isActive : Bool
 //    var width : CGFloat
 //      var height : CGFloat
     
@@ -42,7 +73,7 @@ struct ScrollUIViewRepresentable: UIViewRepresentable {
             control.refreshControl?.addTarget(context.coordinator, action:
                 #selector(Coordinator.handleRefreshControl),
                                               for: .valueChanged)
-    let childView = UIHostingController(rootView: TrafficListView(selectedAnnotation: $selectedAnnotation))
+        let childView = UIHostingController(rootView: TrafficListView(selectedAnnotation: $selectedAnnotation, isActive:$isActive).environmentObject(cameraSelected))
         childView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
             control.addSubview(childView.view)

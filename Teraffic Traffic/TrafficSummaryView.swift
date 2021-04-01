@@ -29,7 +29,9 @@ struct TrafficSummaryView: View {
                                 
                                 NavigationLink(
                                 
-                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation, camera: cameras.camera),
+                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation
+//                                                                          , camera: cameras.camera
+                                    ),
                                     label: {
 //                                AsyncImage(
 //                                    url : URL(string: cameraItem.camera.image)!,

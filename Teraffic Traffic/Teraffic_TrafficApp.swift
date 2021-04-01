@@ -21,11 +21,14 @@ struct Teraffic_TrafficApp: App {
         
         @StateObject var favouriteList = FavouriteListObservableObject()
         
+    @StateObject var  cameraSelected = TrafficCameraSelectedObservableObject()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                     .environmentObject(favouriteList)
                     .environmentObject(trafficCameras)
+                .environmentObject(cameraSelected)
                     .onAppear {
                         trafficCameras.fetchTrafficCameras()
         }

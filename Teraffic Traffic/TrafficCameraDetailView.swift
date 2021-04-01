@@ -15,7 +15,7 @@ struct TrafficCameraDetailView: View {
     
     @Binding var selectedAnnotation: Camera?
     
-    let camera: Camera
+//    let camera: Camera
 //    let cameras: Cameras
     @State var region = MKCoordinateRegion(
           center: CLLocationCoordinate2D(
@@ -76,14 +76,14 @@ struct TrafficCameraDetailView: View {
                 .navigationBarItems(
                     trailing:
                         Button(action: {
-                            favouritelist.toggle(camera: camera)
+                            favouritelist.toggle(camera: selectedAnnotation!)
                         }, label: {
-                             Image(systemName: favouritelist.isAddedToFavouritelist(camera: camera) ? "star.fill" : "star")
+                             Image(systemName: favouritelist.isAddedToFavouritelist(camera: selectedAnnotation!) ? "star.fill" : "star")
                         })
                 )
                 
             }
-        }.navigationTitle(camera.id).navigationBarItems(leading: Button(action: {
+        }.navigationTitle(selectedAnnotation!.id).navigationBarItems(leading: Button(action: {
             print("Dismissing sheet view...")
             self.selectedAnnotation = nil
         }) {
@@ -93,9 +93,9 @@ struct TrafficCameraDetailView: View {
             trailing:
                 HStack{
                 Button(action: {
-                    favouritelist.toggle(camera: camera)
+                    favouritelist.toggle(camera: selectedAnnotation!)
                 }, label: {
-                     Image(systemName: favouritelist.isAddedToFavouritelist(camera: camera) ? "star.fill" : "star")
+                     Image(systemName: favouritelist.isAddedToFavouritelist(camera: selectedAnnotation!) ? "star.fill" : "star")
                 })
                     if((self.selectedAnnotation) != nil){
                         
@@ -111,7 +111,7 @@ struct TrafficCameraDetailView: View {
             
         )
         .onAppear {
-            trafficDetail.fetchCamera(cameraId: camera.id)
+            trafficDetail.fetchCamera(cameraId: selectedAnnotation!.id)
         }
     }
 

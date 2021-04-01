@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @State var selectedCamera: Cameras?
     @State var selectedAnnotation: Camera?
-    @State var selection: String = "Summary"
+    @State var selection: String = "summary"
     @State var isActive = false
     
     var body: some View {
@@ -26,6 +26,15 @@ struct ContentView: View {
 //                    Text("Summary")
 //                }
 //            }
+            ScrollUIView(selectedAnnotation: $selectedAnnotation)
+            .tabItem {
+                VStack {
+                    Image(systemName: "chart.bar")
+                    Text("Summary")
+                }
+            }
+                .tag("summary")
+            
             TrafficGoogleMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
                 .tabItem{
                     VStack{
@@ -33,13 +42,7 @@ struct ContentView: View {
                         Text("Google Map")
                     }
                 }.tag("trafficgooglemap")
-            ScrollUIView(selectedAnnotation: $selectedAnnotation)
-            .tabItem {
-                VStack {
-                    Image(systemName: "chart.bar")
-                    Text("Summary2")
-                }
-            }
+           
 //            ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation)
 //            .tabItem {
 //                VStack {
@@ -47,7 +50,6 @@ struct ContentView: View {
 //                    Text("Summary2")
 //                }
 //            }
-            .tag("summary")
             TrafficMapView(isActive:$isActive, selectedAnnotation: $selectedAnnotation)
                 .tabItem{
                     VStack{

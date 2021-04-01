@@ -41,7 +41,9 @@ struct TrafficGoogleMapView: View{
 //            .frame(height: 300)
             .background(
                 NavigationLink(destination:
-                                TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation, camera: cameras.cameras[0].camera), isActive: $isActive){
+                                TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation
+//                                                        , camera: cameras.cameras[0].camera
+                                ), isActive: $isActive){
                 Text("Page  Link")
             }
     //
