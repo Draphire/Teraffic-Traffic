@@ -42,6 +42,7 @@
 		F0B5444125B8663800F677E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5444025B8663800F677E8 /* AppDelegate.swift */; };
 		F0BBDF4D261229210008D432 /* TrafficListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF4C261229210008D432 /* TrafficListView.swift */; };
 		F0BBDF552615BF390008D432 /* TrafficCameraSelectedObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF542615BF390008D432 /* TrafficCameraSelectedObservableObject.swift */; };
+		F0BBDF5D2616EE5D0008D432 /* TrafficFavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF5C2616EE5D0008D432 /* TrafficFavouriteListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		F0B5444025B8663800F677E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0BBDF4C261229210008D432 /* TrafficListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficListView.swift; sourceTree = "<group>"; };
 		F0BBDF542615BF390008D432 /* TrafficCameraSelectedObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCameraSelectedObservableObject.swift; sourceTree = "<group>"; };
+		F0BBDF5C2616EE5D0008D432 /* TrafficFavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficFavouriteListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				F05A679926087D9200FC6CDA /* ScrollUIViewRepresentable.swift */,
 				F05A679E2608E80600FC6CDA /* SearchBar.swift */,
 				F0BBDF4C261229210008D432 /* TrafficListView.swift */,
+				F0BBDF5C2616EE5D0008D432 /* TrafficFavouriteListView.swift */,
 			);
 			path = "Teraffic Traffic";
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				F05A679A26087D9300FC6CDA /* ScrollUIViewRepresentable.swift in Sources */,
 				F05A6550258CA68500BDDCE0 /* FavouriteListView.swift in Sources */,
 				F05A678125C3106200FC6CDA /* PlaceManager.swift in Sources */,
+				F0BBDF5D2616EE5D0008D432 /* TrafficFavouriteListView.swift in Sources */,
 				F05A679525C9AB9700FC6CDA /* TrafficGoogleMapView.swift in Sources */,
 				F05A65162577E9C600BDDCE0 /* Model.swift in Sources */,
 				F05A656D25998BF700BDDCE0 /* MapView.swift in Sources */,

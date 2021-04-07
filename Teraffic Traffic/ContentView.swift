@@ -31,6 +31,8 @@ struct ContentView: View {
                 VStack {
                     Image(systemName: "chart.bar")
                     Text("Summary")
+                }.onTapGesture {
+                    print("Summary Pressed")
                 }
             }
                 .tag("summary")
@@ -64,7 +66,10 @@ struct ContentView: View {
 //                        Text("Google Map")
 //                    }
 //                }.tag("trafficgooglemap")
-            FavouriteListView( selectedAnnotation: $selectedAnnotation)
+            
+            
+//            FavouriteListView( selectedAnnotation: $selectedAnnotation)
+            FavouriteScrollUIView( selectedAnnotation: $selectedAnnotation)
                 .tabItem {
                     VStack{
                         Image(systemName:"star.fill")

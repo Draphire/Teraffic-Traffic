@@ -11,7 +11,9 @@ import MapKit
 struct TrafficCameraDetailView: View {
 
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
-    @StateObject var trafficDetail = TrafficCameraDetailObservableObject()
+    
+//    @StateObject var trafficDetail = TrafficCameraDetailObservableObject()
+    @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
     
     @Binding var selectedAnnotation: Camera?
     

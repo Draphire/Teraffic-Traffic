@@ -16,7 +16,7 @@ struct TrafficListView: View {
     
     @Binding var selectedAnnotation: Camera?
     
-@Binding var isActive : Bool
+    @Binding var isActive : Bool
     
     @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
     
