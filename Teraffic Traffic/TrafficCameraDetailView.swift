@@ -78,16 +78,17 @@ struct TrafficCameraDetailView: View {
                 .navigationBarItems(
                     trailing:
                         Button(action: {
-                            favouritelist.toggle(camera: selectedAnnotation!)
+                            favouritelist.toggle(camera: trafficDetail.getSelectedCamera())
                         }, label: {
-                             Image(systemName: favouritelist.isAddedToFavouritelist(camera: selectedAnnotation!) ? "star.fill" : "star")
+                             Image(systemName: favouritelist.isAddedToFavouritelist(camera: trafficDetail.getSelectedCamera()) ? "star.fill" : "star")
                         })
                 )
                 
             }
-        }.navigationTitle(selectedAnnotation!.id).navigationBarItems(leading: Button(action: {
+        }.navigationTitle(trafficDetail.getSelectedCamera().id).navigationBarItems(leading: Button(action: {
             print("Dismissing sheet view...")
-            self.selectedAnnotation = nil
+//            self.selectedAnnotation = nil
+            trafficDetail.resetSelectedCamera()
         }) {
             Text("Done").bold()
         })
@@ -95,25 +96,28 @@ struct TrafficCameraDetailView: View {
             trailing:
                 HStack{
                 Button(action: {
-                    favouritelist.toggle(camera: selectedAnnotation!)
+                    favouritelist.toggle(camera: trafficDetail.getSelectedCamera())
                 }, label: {
-                     Image(systemName: favouritelist.isAddedToFavouritelist(camera: selectedAnnotation!) ? "star.fill" : "star")
+                     Image(systemName: favouritelist.isAddedToFavouritelist(camera: trafficDetail.getSelectedCamera()) ? "star.fill" : "star")
                 })
-                    if((self.selectedAnnotation) != nil){
-                        
+//                    if((trafficDetail.getSelectedCamera()) != nil){
+
                     Button(action: {
                         print("Dismissing sheet view...")
-                        self.selectedAnnotation = nil
+//                        self.selectedAnnotation = nil
+                        
+                        trafficDetail.resetSelectedCamera()
                     }) {
                         Text("Done").bold()
                     }
-                        
-                    }
+
+//                    }
                 }
             
         )
         .onAppear {
-            trafficDetail.fetchCamera(cameraId: selectedAnnotation!.id)
+//            trafficDetail.fetchCamera(cameraId: selectedAnnotation!.id)
+            trafficDetail.fetchCamera()
         }
     }
 

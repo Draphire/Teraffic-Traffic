@@ -12,6 +12,7 @@ struct TrafficListView: View {
 //    @ObservedObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
     
+    @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
     @State private var searchQuery: String = ""
     
     @Binding var selectedAnnotation: Camera?
@@ -36,6 +37,7 @@ struct TrafficListView: View {
                                     self.isActive.toggle()
                                     self.selectedAnnotation = cameras.camera
                                     self.cameraSelected.selectCamera(camera: cameras.camera)
+                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
                                 }){
                                     TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
                                 }

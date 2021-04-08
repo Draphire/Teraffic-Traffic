@@ -18,6 +18,8 @@ struct TrafficGoogleMapView: View{
     @EnvironmentObject var trafficCameras: TrafficCamerasObservableObject
     @EnvironmentObject var favouritelist:
         FavouriteListObservableObject
+    @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
+    
     @Binding var isActive : Bool
     @Binding var selectedAnnotation: Camera?
     
@@ -34,6 +36,7 @@ struct TrafficGoogleMapView: View{
                                     print("assign binding for navigation = ", cameras.id)
                                     isActive = true
                                     selectedAnnotation = cameras.camera
+                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
             //                        TrafficCameraDetailView( camera: title.camera)
                                     
                                 })

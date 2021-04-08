@@ -11,6 +11,9 @@ struct TrafficFavouriteListView : View{
     //modified independent Favourites List View
     @EnvironmentObject var favouriteList: FavouriteListObservableObject
     @EnvironmentObject var trafficCameras : TrafficCamerasObservableObject
+    
+    @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
+    
     @State var selectedCamera: Camera?
     
     @Binding var selectedAnnotation: Camera?
@@ -41,6 +44,7 @@ struct TrafficFavouriteListView : View{
                         Button(action: {
                             self.isActive.toggle()
                             self.selectedAnnotation = cameras.camera
+                            self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
 //                            self.cameraSelected.selectCamera(camera: cameras.camera)
                         }){
                                 TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouriteList.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
