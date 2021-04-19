@@ -40,7 +40,7 @@ class TrafficCameraDetailObservableObject: NSObject, ObservableObject {
             
             switch result {
             case .success(let summary):
-                self.camera = summary.camera
+//                self.camera = summary.camera
                 self.cameras = summary
                 
             case .failure(let error):
@@ -60,9 +60,9 @@ class TrafficCameraDetailObservableObject: NSObject, ObservableObject {
             
             switch result {
             case .success(let summary):
-                self.camera = summary.camera
+//                self.camera = summary.camera
                 self.cameras = summary
-                self.selectedCamera = summary.camera
+//                self.selectedCamera = summary.camera
             case .failure(let error):
                 self.error = error
             }
@@ -71,7 +71,14 @@ class TrafficCameraDetailObservableObject: NSObject, ObservableObject {
     }
     
     func setSelectedCamera(cameraSelected: Camera){
+        // traffic details view uses .cameras to get selected camera during rendering which is not updated yet since setSelectedCamera does not update Cameras, thus Cameras is only updated upon .onAppear in the details view, causing map to only update later which the use of environment object.
         self.selectedCamera = cameraSelected
+    }
+    
+    func setSelectedCameras(camerasSelected: Cameras){
+        // traffic details view uses .cameras to get selected camera during rendering which is not updated yet since setSelectedCamera does not update Cameras, thus Cameras is only updated upon .onAppear in the details view, causing map to only update later which the use of environment object.
+        self.cameras = camerasSelected
+        self.selectedCamera = camerasSelected.camera
     }
     
     func resetSelectedCamera(){

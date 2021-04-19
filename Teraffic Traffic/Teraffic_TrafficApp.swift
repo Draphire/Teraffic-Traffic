@@ -21,7 +21,7 @@ struct Teraffic_TrafficApp: App {
         
         @StateObject var favouriteList = FavouriteListObservableObject()
         
-    @StateObject var  cameraSelected = TrafficCameraSelectedObservableObject()
+//    @StateObject var  cameraSelected = TrafficCameraSelectedObservableObject()
     
     
     @StateObject var trafficDetail = TrafficCameraDetailObservableObject()
@@ -31,7 +31,7 @@ struct Teraffic_TrafficApp: App {
             ContentView()
                     .environmentObject(favouriteList)
                     .environmentObject(trafficCameras)
-                .environmentObject(cameraSelected)
+//                .environmentObject(cameraSelected)
                 .environmentObject(trafficDetail)
                     .onAppear {
                         trafficCameras.fetchTrafficCameras()

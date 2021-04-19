@@ -19,7 +19,7 @@ struct TrafficListView: View {
     
     @Binding var isActive : Bool
     
-    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
+//    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
     
     var body: some View {
 //        NavigationView{
@@ -34,10 +34,17 @@ struct TrafficListView: View {
                             ForEach(cameras.cameras.filter{self.searchQuery.isEmpty ? true: $0.id.contains(searchQuery)},id: \.self) { cameras in
                                 
                                 Button(action: {
+                                    // source of setting the selected camera from list view
+//                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
+                                    self.trafficDetail.setSelectedCameras(camerasSelected: cameras)
+                                    
                                     self.isActive.toggle()
-                                    self.selectedAnnotation = cameras.camera
-                                    self.cameraSelected.selectCamera(camera: cameras.camera)
-                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
+                                    // binding variable
+//                                    self.selectedAnnotation = cameras.camera
+                                    
+                                    // selected camera observable object
+//                                    self.cameraSelected.selectCamera(camera: cameras.camera)
+                                    
                                 }){
                                     TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
                                 }

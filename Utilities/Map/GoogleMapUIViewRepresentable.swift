@@ -13,7 +13,7 @@ import GooglePlaces
 struct GoogleMapViewRepresentable: UIViewRepresentable {
 //    let locationManager = LocationManager()
     let locationManager = CLLocationManager()
-    private let zoom: Float = 15.0
+    private let zoom: Float = 12.0
     private let fullZoom: Float = 12.0
     
     let cameraItems: [Cameras]
@@ -73,6 +73,29 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
         
         mapView.delegate = context.coordinator
 //        mapView.delegate = GMapCoordinator(self)
+        
+        
+//        DispatchQueue.main.async {
+//            if cameraItems.isEmpty{
+//
+//            }else{
+//
+//                mapView.clear()
+//            }
+//            for gCheckpoint in cameraItems {
+//                let newMarker: GMSMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: gCheckpoint.location.latitude, longitude: gCheckpoint.location.longitude ))
+////                    newMarker.position = CLLocationCoordinate2D(latitude: gCheckpoint.location.latitude, longitude: gCheckpoint.location.longitude )
+////                    newMarker.title = gCheckpoint.id
+//                newMarker.title = gCheckpoint.id
+//                newMarker.snippet = gCheckpoint.image
+//                newMarker.userData = gCheckpoint
+//                newMarker.map = mapView
+////                    gCheckpoint.position = gCheckpoint.coordinate
+////                    gCheckpoint.position
+//
+//            }
+//        }
+        
              return mapView
      }
      
@@ -94,17 +117,24 @@ struct GoogleMapViewRepresentable: UIViewRepresentable {
             let location: CLLocationCoordinate2D = locationManager.location!.coordinate
             
             
-            if cameraItems.count == 1 {}
+            if cameraItems.count == 1 {
+                
+                view.animate(toLocation:CLLocationCoordinate2D(latitude: cameraItems[0].location.latitude, longitude: cameraItems[0].location.longitude))
+                
+                
+            }
             else{
-            view.animate(toLocation:location
-            
-            
-            )
+            view.animate(toLocation:location)
             }
 //            let cameraGCheckPointItems = cameraGCheckPoint(with: cameraItems)
             
             DispatchQueue.main.async {
-                view.clear()
+                if cameraItems.isEmpty{
+                    
+                }else{
+                    
+                    view.clear()
+                }
                 for gCheckpoint in cameraItems {
                     let newMarker: GMSMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: gCheckpoint.location.latitude, longitude: gCheckpoint.location.longitude ))
 //                    newMarker.position = CLLocationCoordinate2D(latitude: gCheckpoint.location.latitude, longitude: gCheckpoint.location.longitude )

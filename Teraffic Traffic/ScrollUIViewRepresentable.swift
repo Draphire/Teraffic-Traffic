@@ -99,7 +99,7 @@ struct ScrollUIViewRepresentable: UIViewRepresentable {
     @EnvironmentObject var favouritelist: FavouriteListObservableObject
     
     @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
-    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
+//    @EnvironmentObject var cameraSelected: TrafficCameraSelectedObservableObject
     
 //    @State var selectedAnnotation: Camera?
     @Binding var selectedAnnotation: Camera?
