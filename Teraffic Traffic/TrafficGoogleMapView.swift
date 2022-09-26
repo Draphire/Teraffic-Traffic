@@ -36,7 +36,8 @@ struct TrafficGoogleMapView: View{
                                     print("assign binding for navigation = ", cameras.id)
                                     isActive = true
                                     selectedAnnotation = cameras.camera
-                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
+//                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
+                                    self.trafficDetail.setSelectedCameras(camerasSelected: cameras)
             //                        TrafficCameraDetailView( camera: title.camera)
                                     
                                 })

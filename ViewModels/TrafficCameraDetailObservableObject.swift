@@ -50,6 +50,7 @@ class TrafficCameraDetailObservableObject: NSObject, ObservableObject {
         }
     }
     
+    // main function for retrieving traffic info from api
     func fetchCamera() {
         isLoading = true
         error = nil

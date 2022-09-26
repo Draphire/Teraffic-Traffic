@@ -74,7 +74,7 @@ struct FavouriteScrollUIView: View {
                     .background(
                     NavigationLink(destination:
 //                                    TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation)
-                                   
+                                   // uses isActive to indicate if background navigationLink is toggled
                                        ScrollUIViewRepresentable(selectedAnnotation: $selectedAnnotation, listType: "details", isActive:$isActive),
                                    isActive: $isActive
 //                                    TrafficCameraDetailView(selectedAnnotation: self.$cameraSelected.camera),

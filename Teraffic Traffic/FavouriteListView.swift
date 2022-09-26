@@ -45,7 +45,7 @@ struct FavouriteListView : View{
                         
                         
                     } else {
-                        Text(camerasInList.id)
+//                        Text(camerasInList.id)
                     }
                     
                 }
