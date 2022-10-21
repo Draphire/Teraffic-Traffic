@@ -141,7 +141,9 @@ struct ScrollUIViewRepresentable: UIViewRepresentable {
                  control.addSubview(childView.view)
         
         } else {
-            let  childView = UIHostingController(rootView:  TrafficCameraDetailView(selectedAnnotation: $selectedAnnotation))
+            let  childView = UIHostingController(rootView:  TrafficCameraDetailView(
+//                                                    selectedAnnotation: $selectedAnnotation
+            ))
            
             childView.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-100)
 

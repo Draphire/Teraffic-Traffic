@@ -39,12 +39,12 @@ struct TrafficListView: View {
                                     self.trafficDetail.setSelectedCameras(camerasSelected: cameras)
                                     
                                     self.isActive.toggle()
-                                    // binding variable
+
+                                    
 //                                    self.selectedAnnotation = cameras.camera
-                                    
-                                    // selected camera observable object
 //                                    self.cameraSelected.selectCamera(camera: cameras.camera)
-                                    
+                                    self.trafficDetail.setSelectedCamera(cameraSelected: cameras.camera)
+
                                 }){
                                     TrafficCameraRowView(cameraItem: cameras, isAddedToFavouritelist: favouritelist.isAddedToFavouritelist(camera: cameras.camera)).padding(.vertical)
                                 }

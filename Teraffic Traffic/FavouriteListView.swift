@@ -35,7 +35,8 @@ struct FavouriteListView : View{
 //                    .frame(idealHeight: UIScreen.main.bounds.width / 2 * 1)
                     if let cameras = camerasFavourited(with: camerasInList){
                         
-                        NavigationLink( destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation
+                        NavigationLink( destination: TrafficCameraDetailView(
+//                            selectedAnnotation: $selectedAnnotation
 //                                                                              , camera: cameras.camera
                         ),
                                         

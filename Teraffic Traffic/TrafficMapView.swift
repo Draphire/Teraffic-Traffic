@@ -39,7 +39,8 @@ struct TrafficMapView: View {
 //                    })
                     .background(
                         NavigationLink(destination:
-                                        TrafficCameraDetailView(selectedAnnotation: self.$selectedAnnotation
+                                        TrafficCameraDetailView(
+//                                            selectedAnnotation: self.$selectedAnnotation
 //                                                                ,
 //                                                                camera: cameras.cameras[0].camera
                                         ), isActive: $isActive){

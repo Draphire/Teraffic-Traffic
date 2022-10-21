@@ -38,6 +38,7 @@
 		F05A679F2608E80600FC6CDA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A679E2608E80600FC6CDA /* SearchBar.swift */; };
 		F06222A225A5FF58004974E9 /* MapUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06222A125A5FF58004974E9 /* MapUIViewRepresentable.swift */; };
 		F06222A725A77AB2004974E9 /* TrafficMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06222A625A77AB2004974E9 /* TrafficMapView.swift */; };
+		F0A16D5029024A5000E7B494 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F0A16D4F29024A5000E7B494 /* .gitignore */; };
 		F0B5443C25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */; };
 		F0B5444125B8663800F677E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5444025B8663800F677E8 /* AppDelegate.swift */; };
 		F0BBDF4D261229210008D432 /* TrafficListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDF4C261229210008D432 /* TrafficListView.swift */; };
@@ -102,6 +103,7 @@
 		F05A679E2608E80600FC6CDA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F06222A125A5FF58004974E9 /* MapUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUIViewRepresentable.swift; sourceTree = "<group>"; };
 		F06222A625A77AB2004974E9 /* TrafficMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficMapView.swift; sourceTree = "<group>"; };
+		F0A16D4F29024A5000E7B494 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F0B5443B25B835C900F677E8 /* GoogleMapUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapUIViewRepresentable.swift; sourceTree = "<group>"; };
 		F0B5444025B8663800F677E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0BBDF4C261229210008D432 /* TrafficListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficListView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		F05A64D22577C7B900BDDCE0 = {
 			isa = PBXGroup;
 			children = (
+				F0A16D4F29024A5000E7B494 /* .gitignore */,
 				F05A652C2587A26800BDDCE0 /* Utilities */,
 				F05A651D25792B3700BDDCE0 /* ViewModels */,
 				F05A650C2577E95300BDDCE0 /* Shared */,
@@ -403,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F05A64E62577C7B900BDDCE0 /* Preview Assets.xcassets in Resources */,
+				F0A16D5029024A5000E7B494 /* .gitignore in Resources */,
 				F05A64E32577C7B900BDDCE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ struct TrafficCameraDetailView: View {
 //    @StateObject var trafficDetail = TrafficCameraDetailObservableObject()
     @EnvironmentObject var trafficDetail: TrafficCameraDetailObservableObject
     
-    @Binding var selectedAnnotation: Camera?
+//    @Binding var selectedAnnotation: Camera?
     
 //    let camera: Camera
 //    let cameras: Cameras
@@ -88,7 +88,7 @@ struct TrafficCameraDetailView: View {
         }.navigationTitle(trafficDetail.getSelectedCamera().id).navigationBarItems(leading: Button(action: {
             print("Dismissing sheet view...")
 //            self.selectedAnnotation = nil
-            trafficDetail.resetSelectedCamera()
+//            trafficDetail.resetSelectedCamera()
         }) {
             Text("Done").bold()
         })
@@ -106,7 +106,7 @@ struct TrafficCameraDetailView: View {
                         print("Dismissing sheet view...")
 //                        self.selectedAnnotation = nil
                         
-                        trafficDetail.resetSelectedCamera()
+//                        trafficDetail.resetSelectedCamera()
                     }) {
                         Text("Done").bold()
                     }

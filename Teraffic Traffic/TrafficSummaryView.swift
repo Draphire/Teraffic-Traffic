@@ -29,7 +29,9 @@ struct TrafficSummaryView: View {
                                 
                                 NavigationLink(
                                 
-                                    destination: TrafficCameraDetailView( selectedAnnotation: $selectedAnnotation
+                                    destination: TrafficCameraDetailView(
+                                        
+//                                        selectedAnnotation: $selectedAnnotation
 //                                                                          , camera: cameras.camera
                                     ),
                                     label: {
